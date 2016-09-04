@@ -1,5 +1,7 @@
-app/database.config.php*
+app/database.config.php
 upfiles/
+upfiles/*
 data/tpl_c/
 data/admin_tplc/
 data/cache_zh.php
+data/system_zh.php
