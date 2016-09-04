@@ -17,7 +17,7 @@ $_db_config["port"] = "3306";
 //数据库用户
 $_db_config["user"] = "root";
 //数据库密码
-$_db_config["pass"] = "Wanlianbo@0624";
+$_db_config["pass"] = "root";
 //数据库名
 $_db_config["data"] = "chaininfo";
 //数据表前缀
