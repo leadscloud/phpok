@@ -223,6 +223,9 @@ class uc_note {
 		$data = array();
 		if(is_array($post)) {
 			foreach($post as $k => $v) {
+                if(substr($v['findpattern'], 0, 1) != '/' || substr($v['findpattern'], -3) != '/is') {
+                    $v['findpattern'] = '/' . preg_quote($v['findpattern'], '/') . '/is';
+                }
 				$data['findpattern'][$k] = $v['findpattern'];
 				$data['replace'][$k] = $v['replacement'];
 			}
@@ -254,7 +257,15 @@ class uc_note {
 			return API_RETURN_FORBIDDEN;
 		}
 		//include $this->appdir.'./uc_client/client.php';
-		$UC_API = $post['UC_API'];
+        //$UC_API = $post['UC_API'];
+
+        //dz uc-key
+        $UC_API = '';
+        if($post['UC_API']) {
+            $UC_API = str_replace(array('\'', '"', '\\', "\0", "\n", "\r"), '', $post['UC_API']);
+            unset($post['UC_API']);
+        }
+        //end
 
 		//note 写 app 缓存文件
 		$cachefile = $this->appdir.'./uc_client/data/cache/apps.php';
