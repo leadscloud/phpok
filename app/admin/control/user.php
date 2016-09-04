@@ -193,7 +193,7 @@ class user_c extends Control
 				$array["pass"] = sys_md5("123456");
 			}
 		}
-		$array["ifshow"] = $this->trans_lib->int("ifshow");//是否在前台显示
+		//$array["ifshow"] = $this->trans_lib->int("ifshow");//是否在前台显示
 		$array["email"] = $this->trans_lib->safe("email");//模板目录
 		$regdate = $this->trans_lib->safe("regdate");
 		$array["regdate"] = $regdate ? strtotime($regdate) : $this->system_time;
