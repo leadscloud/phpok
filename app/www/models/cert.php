@@ -46,8 +46,8 @@ class cert_m extends Model
         if (isset($id1['id']) && isset($id2['id']) && !isset($id3['id'])) {
             if ($id1['id'] == $id2['id']) {
                 $id_flag = $id1['id'];
-                $sql = "SELECT * FROM ".$this->db->prefix."user_ext ue JOIN WHERE id = ".$id_flag;
-                $result = $this->db->get_one($sql);
+                $sql = "SELECT * FROM ".$this->db->prefix."user_ext ue WHERE id = ".$id_flag;
+                $result = $this->db->get_all($sql);
             }
         }
 
@@ -55,7 +55,7 @@ class cert_m extends Model
             if ($id1['id'] == $id3['id']) {
                 $id_flag = $id1['id'];
                 $sql = "SELECT * FROM ".$this->db->prefix."user_ext WHERE id = ".$id_flag;
-                $result = $this->db->get_one($sql);
+                $result = $this->db->get_all($sql);
             }
         }
 
@@ -63,7 +63,7 @@ class cert_m extends Model
             if ($id2['id'] == $id3['id']) {
                 $id_flag = $id2['id'];
                 $sql = "SELECT * FROM ".$this->db->prefix."user_ext WHERE id = ".$id_flag;
-                $result = $this->db->get_one($sql);
+                $result = $this->db->get_all($sql);
             }
         }
 
