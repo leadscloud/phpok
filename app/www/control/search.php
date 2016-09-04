@@ -14,6 +14,7 @@ class search_c extends Control
 		$this->load_model("search");
 		$this->load_model("module");
 		$this->load_model("cate");
+		$this->load_model("cert");
 	}
 
 	function search_c()
@@ -129,6 +130,23 @@ class search_c extends Control
 				$tplfile = "search_".$mod_rs["identifier"];
 			}
 		}
+
+        // 姓名
+		$query['fullname'] = $this->trans_lib->safe("txtRealName");
+
+        // 编号
+		$query['certnum'] = $this->trans_lib->safe("txtBianHao");
+
+        // 编号
+		$query['idcard'] = $this->trans_lib->safe("txtCardId");
+
+        // 证书查询标志
+		$flag = $this->trans_lib->safe("flag");
+        if (isset($flag) && 'cert_query' == $flag) {
+            $chk_tplfile = ROOT.$this->tpl->tpldir."/cert.".$this->tpl->ext;
+			$certdata = $this->cert_m->get_one($query['idcard'], $query['fullname'], $query['certnum']);
+            $this->tpl->assign("certdata", $certdata);
+        }
 		$this->tpl->display($tplfile.".".$this->tpl->ext);
 	}
 

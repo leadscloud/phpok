@@ -1,6 +1,76 @@
 <!-- inc:head -->
 <link href="images/zhengshu.css" rel="stylesheet" type="text/css" />
 <link href="images/tab.css" rel="stylesheet" type="text/css" /></head>
+<script type="text/javascript">
+var base_file = "{:HOME_PAGE}";
+var base_url = "{:$sys_app->url}";
+var base_ctrl = "{:$sys_app->config->c}";
+var base_func = "{:$sys_app->config->f}";
+var base_dir = "{:$sys_app->config->d}";
+var phpok_data = "";
+</script>
+<!--<script type="text/javascript" src="js/jquery.js"></script>-->
+<!-- if(function_exists("imagecreate") && defined("SYS_VCODE_USE") && SYS_VCODE_USE == true) -->
+<script type="text/javascript">
+function adm_login_vcode()
+{
+	var srcurl = "{:site_url('login,codes','','&')}";
+	var rand = Math.random();
+	srcurl += "rand="+rand;
+	$("#phpok_vcode").attr("src",srcurl);
+}
+function chk_vcode()
+{
+	var chk = $("#chk").val();
+	if(!chk)
+	{
+		alert("验证码不允许为空");
+		return false;
+	}
+	return true;
+}
+</script>
+<!-- else -->
+<script type="text/javascript">
+function chk_vcode(){return true}
+</script>
+<!-- end -->
+<script type="text/javascript">
+function phpok_chklogin(t)
+{
+	var name = $("#txtRealName").val();
+	var bianhao = $("#txtBianHao").val();
+	var idcard = $("#txtCardId").val();
+
+	if(!bianhao) {
+        var flag = 0;
+    } esle {
+        var flag = 1;
+    }
+	if(!idcard) {
+        var flag1 = 0;
+    } esle {
+        var flag2 = 1;
+    }
+	if(!name) {
+        var flag3 = 0;
+    } esle {
+        var flag3 = 1;
+    }
+
+    var flag4 = flag + flag1 + flag2;
+    alert(flag4);
+    if (flag4 < 2) {
+        alert(必须填两个信息以上！);
+        return false;
+    }
+
+	var vcode_chk = chk_vcode();
+	if(!vcode_chk) return false;
+	return true;
+}
+if (self.location != top.location) top.location = self.location;
+</script>
 <div class="snav">
 <div class="tongzhi"><div id="scrollDiv">
      <ul style="margin-top: 0px;">
@@ -55,6 +125,13 @@
                 location.href = "search.aspx?s=" + $("#sinput").val();
             }
         });
+
+        function to_submit()
+        {
+            $("#_to_url").attr("value",top.location);
+            alert(top.location);
+            return false;
+        }
     });
 </script>
 <div class="main">
@@ -72,7 +149,9 @@
 </div></div>
 
 <div class="tab-content">
-<form id="form1" action="cxbyzs_query.aspx" method="post">
+<form method="post" action="{:site_url('search')}" onsubmit="return phpok_chklogin()">
+<input type="hidden" id="_to_url" name="_to_url" value="" />
+<input type="hidden" id="flag" name="flag" value="cert_query" />
 <div class="zscx">
 <div class="zscx_1"><h2>全国民办高等教育毕业证书查询系统</h2></div>
 <div class="zscx_2">
@@ -89,7 +168,15 @@
 <td align="right">身份证号：</td>
 <td><input name="txtCardId" type="text" id="txtCardId" class="input w80" /></td>
 <td align="right">验证码：</td>
-<td><input name="txtCode" type="text" id="txtCode" class="input w50" /><a id="verifyCode" style="" href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;"><img src="tools/verify_code.ashx" width="80" height="22" align="absmiddle" /></a></td>
+<td>
+    <!--<input name="txtCode" type="text" id="txtCode" class="input w50" />-->
+    <input name="chk" type="text" class="input w50" id="chk" />
+    <td width="79"><img src="{:site_url('login,codes','','&')}" border="0" align="absmiddle" style="cursor:pointer;" onclick="adm_login_vcode()" id="phpok_vcode"></td>
+    <!--<a id="verifyCode" style="" href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">-->
+        <!--<img src="tools/verify_code.ashx" width="80" height="22" align="absmiddle" />-->
+        <!--<img src="{:site_url('login,codes','','&')}" border="0" align="absmiddle" style="cursor:pointer;" onclick="adm_login_vcode()" id="phpok_vcode">-->
+    <!--</a>-->
+</td>
 <td><input type="submit" name="btnSubmit" value="查询" id="btnSubmit" class="btncx" /></td>
 </tr>
 <tr>
