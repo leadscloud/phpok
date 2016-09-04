@@ -164,6 +164,7 @@ class Control
 	//配置参数
 	function set_config($config)
 	{
+		$this->config = new stdClass();
 		$this->config->c = $config['control_trigger'];
 		$this->config->f = $config['function_trigger'];
 		$this->config->d = $config['dir_trigger'];

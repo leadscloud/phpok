@@ -24,11 +24,13 @@ class Model
 	function load_db()
 	{
 		$database_config_file = APP_ROOT.'database.config.php';
+		$_db_type = array();
 		$_db_type["prefix"] = "qinggan_";
 		if(file_exists($database_config_file))
 		{
 			include($database_config_file);
 		}
+		$this->db = new stdClass();
 		$this->db->prefix = $_db_type["prefix"];
 		return true;
 	}
