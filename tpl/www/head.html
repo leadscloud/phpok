@@ -1,43 +1,72 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><!-- if($sitetitle) -->{:$sitetitle} - <!-- end --><!-- if($_sys[seotitle]) --> {:$_sys[seotitle]} - <!-- end -->{:$_sys[sitename]} -- Powered by phpok.com</title>
-<!-- if($_sys[google_site_verification]) --><meta name="google-site-verification" content="{:$_sys[google_site_verification]}" /><!-- end -->
-<!-- if($_sys[yahoo_site_key]) --><meta name="y_key" content="{:$_sys[yahoo_site_key]}" /><!-- end -->
-<!-- if($_sys[ms_site_validate]) --><meta name="msvalidate.01" content="{:$_sys[ms_site_validate]}" /><!-- end -->
-<!-- if($_sys[baidu_union_verify]) --><meta name="baidu_union_verify" content="{:$_sys[baidu_union_verify]}" /><!-- end -->
-<meta name="keywords" content="{:$_sys[keywords]},qinggan,phpok">
-<meta name="description" content="{:$_sys[description]} - PHPOK.COM">
-<script type="text/javascript">
-var base_file = "{:HOME_PAGE}";
-var base_url = "{:$sys_app->url}";
-var base_ctrl = "{:$sys_app->config->c}";
-var base_func = "{:$sys_app->config->f}";
-var base_dir = "{:$sys_app->config->d}";
-var phpok_data = "";
-var iframe_id = "";
-</script>
-<!-- if($_sys[siteurl] && $_sys[site_type] == 'html') --><base href="{:$_sys[siteurl]}" /><!-- end -->
-<link rel="stylesheet" type="text/css" href="images/style.css" />
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/global.js"></script>
-<script type="text/javascript" src="js/www.js"></script>
-<!-- if($sys_app->control_name && file_exists(ROOT."js/www/".$sys_app->control_name.".js")) -->
-<script type="text/javascript" src="js/www/{:$sys_app->control_name}.js"></script>
-<!-- end -->
-</head>
+<head><title>
+	中国民办高等教育学生信息网(官网)
+</title><meta name="keywords" content="民教网,民教网官网,中国民教网,民教官网,学籍查询,证书查询,证书认证" /><meta name="Description" content="民教网官网是中国民办高等教育学生信息网（官网）的简称，又称民教官网。民教官网由北京学生信息咨询服务中心主管，是民办高等教育机构学生信息服务官方网站。" />
 
+<link href="images/top.css" rel="stylesheet" type="text/css" />
+<link href="images/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="images/imgs/MSClass.js"></script>
+<script type="text/javascript" src="images/imgs/jquery-1.10.2.min.js"></script>
+<script src="images/imgs/jquery.KinSlideshow-1.2.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var moveStyle
+    var rand = parseInt(Math.random() * 4)
+    switch (rand) {
+        case 0: moveStyle = "left"; break;
+        case 1: moveStyle = "right"; break;
+        case 2: moveStyle = "down"; break;
+        case 3: moveStyle = "up"; break;
+    }
+    $(function () {
+        $("#focus").KinSlideshow({ moveStyle: moveStyle });
+    })
+</script>
+</head>
 <body>
-<div class="header">
-	<div class="logo"><img src="{:$_sys[logo] ? $_sys[logo] : 'images/logo.jpg'}" alt="{:$_sys[sitename]}" /></div>
-	<ul class="menu">
-		<!-- run:$menulist = phpok_menu($id,$cid,$mid) -->
-		<!-- $menulist AS $key=>$value -->
-		<li{if($value[my_highlight])} class="li_a"{end}><a href="{:$value[link]}"{if($value[target])} target="_blank"{end} title="{:$value[note] ? $value[note] : $value[title]}">{:$value[title]}</a></li>
-		<!-- end -->
-		<!-- run:unset($menulist) -->
-	</ul>
-	<div class="clear"></div>
+
+<script type="text/javascript">
+    function AutoScroll(obj) {
+        $(obj).find("ul:first").animate({
+            marginTop: "-25px"
+        }, 500, function () {
+            $(this).css({ marginTop: "0px" }).find("p:first").appendTo(this);
+        });
+    }
+    $(document).ready(function () {
+        setInterval('AutoScroll("#scrollDiv")', 2000)
+    });
+</script>
+
+  <DIV class=top_content>
+  <div class="wid1000">
+    <DIV class="top_left" style="color:Red">欢迎访问中国民办高等教育学生信息网(官网) www.chsi.ac.cn ！</DIV>
+    <div class="top_dl"><a href="/login.aspx">[请登录]</a> <a href="/reg.aspx" title="实名注册">[实名注册]</a></div>
+    <div class="top_right"><a href= "javascript:window.external.AddFavorite( 'http://www.chsi.ac.cn', '【中国民办高等教育学生信息网（www.chsi.ac.cn）】 '); " target="_self"> 收藏本站 </a> &nbsp;&nbsp;<a href="http://t.qq.com/chsiac" target="_blank">官方微博</a></div>
+  </DIV></DIV>
+
+<div class="wid1000">
+<div class="top">
+<div class="logo">
+<div class="lleft"></div>
+<div class="rright">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="270" height="155">
+<param name="movie" value="/imgs/right.swf">
+<param name="quality" value="high">
+<param name="wmode" value="transparent">
+<embed wmode="transparent" src="/imgs/right.swf" width="270" height="155" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
+</object>
 </div>
+</div>
+<div class="nav">
+<div class="nav1">
+<a href="/default.aspx">网站首页</a><a href="/plist.aspx?id=34">教育领导</a><a href="/list.aspx?id=49">民教协会</a><a href="/news.aspx">新闻中心</a><a href="/list.aspx?id=31">通知公告</a><a href="/list.aspx?id=38">教育法规</a><a href="/list.aspx?id=36">人事任免</a><a href="/plist.aspx?id=37">专家顾问</a><a href="/list.aspx?id=39">教育研究</a><a href="/list.aspx?id=7">政策解读</a><a href="/nianjian.aspx">院校年检</a></div>
+<div class="nav1"><a href="/list.aspx?id=48">大学生活</a><a href="/cxxj.aspx">学籍查询</a><a href="/member/dangan.aspx">图像校对</a><a href="/cxzs.aspx">证书查询</a><a href="/cxda.aspx">档案管理</a><a href="/zsrz.aspx">证书认证</a><a href="/reg.aspx">实名注册</a><a href="/member/dangan.aspx">本人查询</a><a href="/list.aspx?id=41">办学指南</a><a href="/about.aspx">服务平台</a><a href="/list.aspx?id=52">教育黄页</a></div>
+<div class="nav1"><a href="/news.aspx?id=15">国际合作</a><a href="/list.aspx?id=42">招生考试</a><a href="/news.aspx?id=22">院校风采</a><a href="/list.aspx?id=43">学生就业</a><a href="/list.aspx?id=44">专家答疑</a><a href="/list.aspx?id=50">资源中心</a><a href="/baoming.aspx">在线报名</a><a href="/addschool.aspx">院校加入</a><a href="/hezuo.aspx">合作申请</a><a href="/about.aspx?id=32">客服中心</a><a href="/admin/login.aspx" target="_blank">网上办公</a></div>
+</div>
+</div>
+
+
+
+
 

@@ -1,62 +1,300 @@
 <!-- inc:head -->
-<script type="text/javascript" src="js/msclass.js"></script>
-<div class="body">
-	<div class="left">
-		<!-- inc:inc/notice -->
-		<!-- inc:inc/usercp -->
-		<!-- inc:inc/left -->
-	</div>
-	<div class="right">
-		<div class="me">
-			<!-- run:$aboutus = phpok_msg("aboutus") -->
-			<div class="aboutus">
-				<h3>{:$aboutus[title]}</h3>
-				<p>{:nl2br($aboutus[note])}</p>
-			</div>
-			<div class="banner">{:phpok_plugin('picplay')}</div>
-		</div>
-		<!-- run:$hotpic = phpok("hotpic") -->
-		<!-- if($hotpic[rslist]) -->
-		<div class="vmenu"><h3>{:$hotpic[me][cate_name]}</h3></div>
-		<div class="box">
-			<ul class="picture">
-			<!-- $hotpic[rslist] AS $key=>$value -->
-			<li>
-				<div><a href="{:msg_url($value)}" title="{:$value[title]}"><img src="{:$value[picture]}" border="0" alt="{:$value[title]}" /></a></div>
-				<div><a href="{:msg_url($value)}" title="{:$value[title]}">{:sys_cutstring($value[title],17)}</a></div>
-			</li>
-			<!-- end -->
-			</ul>
-			<div class="clear line"></div>
-		</div>
-		<!-- end -->
-		<!-- run:unset($hotpic) -->
-		<!-- run:$products = phpok("product") -->
-		<!-- if($products[rslist]) -->
-		<div class="vmenu"><h3>{:$products[me][cate_name]}</h3></div>
-		<div class="box">
-			<ul class="indexpro">
-			<!-- $products[rslist] AS $key=>$value -->
-			<li>
-				<table width="100%">
-				<tr>
-					<td class="img"><a href="{:msg_url($value)}" title="{:$value[title]}"><img src="{:$value[picture]}" border="0" alt="{:$value[title]}" /></a></td>
-					<td valign="top">
-						<div class="line1">名称：<a href="{:msg_url($value)}" title="{:$value[title]}" style="{:$value[style]}">{:sys_cutstring($value[title],17)}</a></div>
-						<div class="line2">编号：<strong>{:$value[pronum]}</strong></div>
-						<div class="line2">规格：{:$value[prostd]}</div>
-						<!-- if($value[price]>0) --><div class="line2">售价：<span class="red">{:sys_format_price($value[price],$value[price_currency])}</span></div><!-- end -->
-					</td>
-				</tr>
-				</table>
-			</li>
-			<!-- end -->
-			</ul>
-			<div class="clear line"></div>
-		</div>
-		<!-- end -->
-		<!-- run:unset($products) -->
-	</div>
-	<div class="clear"></div>
+
+<div class="snav">
+<div class="tongzhi"><div id="scrollDiv">
+     <ul style="margin-top: 0px;">
+     
+     <p><a href="show.aspx?id=5611" target="_blank">教育部关于印发《教育信息化“十三五”规划》的通知…</a></p>
+     
+     <p><a href="show.aspx?id=5610" target="_blank">国务院食品安全办等6部门关于进一步加强学校校园及…</a></p>
+     
+     <p><a href="show.aspx?id=5551" target="_blank">教育部关于切实做好中小学节粮教育和管理工作的通知…</a></p>
+     
+     <p><a href="show.aspx?id=5550" target="_blank">教育部办公厅关于报送加强和改进高校思想政治建设有…</a></p>
+     
+     <p><a href="show.aspx?id=5506" target="_blank">教育部办公厅关于进一步做好高校毕业生就业创业工作…</a></p>
+     
+     <p><a href="show.aspx?id=5505" target="_blank">中共教育部党组中央纪委驻教育部纪检组关于高等学校…</a></p>
+     
+     <p><a href="show.aspx?id=5443" target="_blank">教育部等七部门关于印发《职业学校教师企业实践规定…</a></p>
+     
+     <p><a href="show.aspx?id=5442" target="_blank">中共教育部党组中央纪委驻教育部纪检组关于高等学校…</a></p>
+     
+     <p><a href="show.aspx?id=5359" target="_blank">教育部关于印发《全国职业院校技能大赛阳光廉洁办赛…</a></p>
+     
+     <p><a href="show.aspx?id=5358" target="_blank">关于印发全国足球场地设施建设规划（2016—2020年）…</a></p>
+     
+     <p><a href="show.aspx?id=5294" target="_blank">中共教育部党组关于深入学习贯彻习近平总书记有关教…</a></p>
+     
+     <p><a href="show.aspx?id=5293" target="_blank">教育部办公厅关于印发《教育信息化项目管理暂行办法…</a></p>
+     
+     <p><a href="show.aspx?id=5210" target="_blank">教育部关于印发《教育部经济责任审计规定》的通知</a></p>
+     
+     <p><a href="show.aspx?id=5209" target="_blank">教育部关于印发《教育部经济责任审计规定》的通知</a></p>
+     
+     <p><a href="show.aspx?id=5140" target="_blank">教育部办公厅关于落实国务院决定取消中央指定地方实…</a></p>
+     
+     </ul>
+     </div></div>
+<div class="search">
+<div class="sitem">站内搜索：</div>
+<div class="sinput"><input id="sinput" name="sinput" value="" class="input2" type="text"/></div>
+<div class="sbtn"><input id="btn" name="btn" type="submit"  value="搜 索" class="btn-s" /></div>
+</div>
+</div>
+<div class="clear"></div>
+<script>
+    $(function () {
+        $("#btn").click(function () {
+            if ($("#sinput").val() == "") {
+                alert("请输入搜索关键词！");
+                $("#sinput").focus();
+            }
+            else {
+                location.href = "search.aspx?s=" + $("#sinput").val();
+            }
+        });
+    });
+</script>
+<div class="main">
+<div class="left-index">
+<div class="focus">
+<div class="pic" id="focus">
+<div  style="visibility:hidden;">
+
+<a href="show.aspx?id=341" target="_blank"><img src="./upload/201411301427394843.jpg" alt="第十二届全国人民代表大会第二次会议在人民大会堂开幕" width="350" height="240" /></a>
+
+<a href="show.aspx?id=4974" target="_blank"><img src="/upload/20160219/201602190951053091.png" alt="官网新闻中心发布教育部2016年工作要点" width="350" height="240" /></a>
+
+<a href="show.aspx?id=2345" target="_blank"><img src="upload/201410290728067031.jpg" alt="中央关于全面推进依法治国若干重大问题的决定（一）" width="350" height="240" /></a>
+
+<a href="show.aspx?id=261" target="_blank"><img src="/upload/201411/30/201411301452298906.jpg" alt="公安部部署开展集中清理网上制贩假证违法信息专项行动" width="350" height="240" /></a>
+
+<a href="show.aspx?id=63" target="_blank"><img src="upload/201411301444034843.jpg" alt="丰富多彩的大学生活--呼和浩特职业学院生物化学工程学院" width="350" height="240" /></a>
+
+<a href="show.aspx?id=59" target="_blank"><img src="upload/201402191140191718.jpg" alt="中国民办高校第一次参展就获得丰硕成果" width="350" height="240" /></a>
+
+</div>
+</div>
+<div class="jigou">
+<ul>
+<li class="item1"><a href="/about.aspx?id=28">平台介绍</a>　<a href="/about.aspx?id=29">资质批文</a></li>
+<li class="item2"><a href="/about.aspx?id=32">客服中心</a>　<a href="/about.aspx?id=33">版权声明</a></li>
+</ul>
+</div>
+</div>
+<div class="news">
+<ul class="tab">
+<li class="current"  id=zx1 onmouseover="tab('zx',1,2,1,'current','')"><a href="list.aspx?id=6" target=_blank>民教动态</a></li>
+<li  id=zx2 onmouseover="tab('zx',2,2,2,'current','')"><a href="list.aspx?id=3"  target="_blank">维权报道</a></li>
+</ul>
+<div class="clear"></div>
+<div class="newslist" id="zx_cont1">
+<h3><a href='show.aspx?id=4974' target='_blank' title='官网新闻中心发布教育部2016年工作要点'>官网新闻中心发布教育部2016年工作要点</a></h3><p class='descript'>导读：2016年教育工作的总体要求是：全面贯彻党的十八大和十八届三中、四中、五中全会精神…… <a href='show.aspx?id=4974' target='_blank'>查看详情</a></p>
+<ul class="txtul" style="margin-top:5px;">
+<li><a href='show.aspx?id=5741' title="北投集团干部学院二期学员来到科德学院考察交流" target='_blank'>北投集团干部学院二期学员来到科德学院考察交流</a></li><li><a href='show.aspx?id=5740' title="西安思源学院印发《2016级新生入学教育实施方案》" target='_blank'>西安思源学院印发《2016级新生入学教育实施方案》</a></li><li><a href='show.aspx?id=5733' title="西安欧亚学院教师参加渭南市申报“中国陕菜之都”专家评审会" target='_blank'>西安欧亚学院教师参加渭南市申报“中国陕菜之都”专家评审会</a></li><li><a href='show.aspx?id=5732' title="陕西国际商贸学院董事长赵超一行赴沣西新城参加大众创业万众创新工作座谈会" target='_blank'>陕西国际商贸学院董事长赵超一行赴沣西新城参加大众创业万众创新工作座谈会</a></li><li><a href='show.aspx?id=5725' title="上海理工大学中英国际学院James Abbott博士受邀在中科院作学术报告" target='_blank'>上海理工大学中英国际学院James Abbott博士受邀在中科院作学术报告</a></li><li><a href='show.aspx?id=5724' title="西安思源学院召开辅导员大会" target='_blank'>西安思源学院召开辅导员大会</a></li>
+</ul>
+</div>
+
+<div class="newslist" id="zx_cont2"  style="display:none">
+<h3><a href='show.aspx?id=2841' target='_blank' title='中国民办高等教育学生信息网严正声明'>中国民办高等教育学生信息网严正声明</a></h3><p class='descript'>（导读）中国民办高等教育学生信息网（官网）官方域名是：http://www.chsi.ac.cn                …… <a href='show.aspx?id=2841' target='_blank'>查看详情</a></p>
+<ul class="txtul" style="margin-top:5px;">
+<li><a href='show.aspx?id=2841' title="中国民办高等教育学生信息网严正声明" target='_blank'>中国民办高等教育学生信息网严正声明</a></li><li><a href='show.aspx?id=5645' title="陕西查处特岗教师考试试题雷同责任单位责任人" target='_blank'>陕西查处特岗教师考试试题雷同责任单位责任人</a></li><li><a href='show.aspx?id=5644' title="新疆取消33名高考违规考生单科或全科成绩" target='_blank'>新疆取消33名高考违规考生单科或全科成绩</a></li><li><a href='show.aspx?id=5425' title="长沙6所民办学校不合格" target='_blank'>长沙6所民办学校不合格</a></li><li><a href='show.aspx?id=5424' title="江西通报7所乱收费学校" target='_blank'>江西通报7所乱收费学校</a></li><li><a href='show.aspx?id=5330' title="重庆通报14所中小学违规收费" target='_blank'>重庆通报14所中小学违规收费</a></li>
+</ul>
+</div>
+
+</div>
+<div class="clear"></div>
+
+<div class="index-ad"><a href="http://www.chsi.ac.cn" target="_blank"><img src="/upload/201411/30/201411301432579843.png" width="760" height="80" /></a></div>
+
+<div class="mid_left lft">
+<div class="m_lft" style="margin-right:10px;">
+                        	<h2>
+                            	<a href="list.aspx?id=13" class="d_n" id=hotnew1 onmouseover="tab('hotnew',1,2,1,'d_n','')">教育时评</a>
+                                <a href="list.aspx?id=31" id=hotnew2 onmouseover="tab('hotnew',2,2,2,'d_n','')">通知公告</a>
+                            </h2>
+                            <div class="l_box" id="hotnew_cont1">
+                            	<div class="m_pic">
+                                   <a href='show.aspx?id=37' target='_blank' title='汉字为什么有危机'><img src='/upload/201402/18/201402182124137812.jpg' /></a><p class='tit'><a href='show.aspx?id=37' target='_blank' title='汉字为什么有危机'>汉字为什么有危机</a></p><p class='cont'>　　《汉字英雄》、《中国汉字听写大会》等节目的热播，暴露出了当下人们使用汉字的一些尴尬，</p>
+                                </div>
+                                <!---end m_pic-->
+                                <ul class="txtul">
+                                    <li><a href='show.aspx?id=5743' title="建设中国特色开放大学 构建国家终身学习体系">建设中国特色开放大学 构建国家终身学习体系</a></li><li><a href='show.aspx?id=5742' title="出实招就能见实效">出实招就能见实效</a></li><li><a href='show.aspx?id=5735' title="坚持“两个服务”推动教育发展">坚持“两个服务”推动教育发展</a></li><li><a href='show.aspx?id=5734' title="全面实施素质教育">全面实施素质教育</a></li><li><a href='show.aspx?id=5727' title="捍卫主权牢记历史理性爱国">捍卫主权牢记历史理性爱国</a></li>
+                                </ul>
+                            </div>
+                            <!--end l_box-->
+                            <div class="l_box" id="hotnew_cont2" style="display:none;">
+                            	<div class="m_pic">
+                                   <a href='show.aspx?id=55' target='_blank' title='教育部办公厅关于开展语言文字规范标准培训工作的通知'><img src='/upload/201402/19/201402191228435312.jpg' /></a><p class='tit'><a href='show.aspx?id=55' target='_blank' title='教育部办公厅关于开展语言文字规范标准培训工作的通知'>教育部办公厅关于开展语言文字规范标准培训工作的通知</a></p><p class='cont'>　　语言文字规范化标准化工作是语言文字工作的基础，语言文字规范标准是语言文字方针政策的集中体现，即将发布的《国家中长…</p>
+                                </div>
+                                <!---end m_pic-->
+                                <ul class="txtul">
+                                   <li><a href='show.aspx?id=5611' title="教育部关于印发《教育信息化“十三五”规划》的通知">教育部关于印发《教育信息化“十三五”规划》的通知</a></li><li><a href='show.aspx?id=5610' title="国务院食品安全办等6部门关于进一步加强学校校园及周边食品安全工作的意见">国务院食品安全办等6部门关于进一步加强学校校园及周边食品安全工作的意见</a></li><li><a href='show.aspx?id=5551' title="教育部关于切实做好中小学节粮教育和管理工作的通知">教育部关于切实做好中小学节粮教育和管理工作的通知</a></li><li><a href='show.aspx?id=5550' title="教育部办公厅关于报送加强和改进高校思想政治建设有关经验材料的通知">教育部办公厅关于报送加强和改进高校思想政治建设有关经验材料的通知</a></li><li><a href='show.aspx?id=5506' title="教育部办公厅关于进一步做好高校毕业生就业创业工作的通知">教育部办公厅关于进一步做好高校毕业生就业创业工作的通知</a></li>
+                                </ul>
+                            </div>
+                            <!--end l_box-->
+                        </div>
+                        <!--end m_lft-->
+                        <div class="m_lft">
+                        	<h2>
+                            	<a href="list.aspx?id=48" class="d_n" id=hotne1 onmouseover="tab('hotne',1,2,1,'d_n','')">大学生活</a>
+                                <a href="list.aspx?id=38" id=hotne2 onmouseover="tab('hotne',2,2,2,'d_n','')">教育法规</a>
+                            </h2>
+<div class="l_box" id="hotne_cont1">
+                            	<div class="m_pic">
+                                    <a href='show.aspx?id=63' target='_blank' title='丰富多彩的大学生活--呼和浩特职业学院生物化学工程学院'><img src='/upload/201411/30/201411301444034843.jpg' /></a><p class='tit'><a href='show.aspx?id=63' target='_blank' title='丰富多彩的大学生活--呼和浩特职业学院生物化学工程学院'>丰富多彩的大学生活--呼和浩特职业学院生物化学工程学院</a></p><p class='cont'>　　2011年9月，张小平成为了呼和浩特职业学院生物化学工程学院食品生物技术专业大一的新生，开始了新的学习和生活。学校得…</p>
+                                </div>
+                                <!---end m_pic-->
+                                <ul class="txtul">
+                                     <li><a href='show.aspx?id=5379' title="话剧《一诺千金》专场演出于大连科技学院成功举行">话剧《一诺千金》专场演出于大连科技学院成功举行</a></li><li><a href='show.aspx?id=5378' title="西安汽车科技职业学院成功举办“2015年·奋斗的青春最美丽”表彰大会">西安汽车科技职业学院成功举办“2015年·奋斗的青春最美丽”表彰大会</a></li><li><a href='show.aspx?id=5298' title="西安城市建设职业学院第七届社团文化节隆重开幕">西安城市建设职业学院第七届社团文化节隆重开幕</a></li><li><a href='show.aspx?id=5297' title="西安海棠职业学院“学工杯”乒乓球/羽毛球比赛中取得佳绩">西安海棠职业学院“学工杯”乒乓球/羽毛球比赛中取得佳绩</a></li><li><a href='show.aspx?id=5021' title="西安培华学院在全国青少年才艺电视展演中获佳绩">西安培华学院在全国青少年才艺电视展演中获佳绩</a></li>
+                                </ul>
+                            </div>
+                            <!--end l_box-->
+                            <div class="l_box" id="hotne_cont2" style="display:none">
+                            	<div class="m_pic">
+                                    <a href='show.aspx?id=153' target='_blank' title='中华人民共和国教育法'><img src='/upload/201411/30/201411302020270312.jpg' /></a><p class='tit'><a href='show.aspx?id=153' target='_blank' title='中华人民共和国教育法'>中华人民共和国教育法</a></p><p class='cont'>　　第一章 总则第一条 为了发展教育事业，提高全民族的素质，促进社会主义物质文明和精神文明建设，根据宪法，制定本法。 …</p>
+                                </div>
+                                <!---end m_pic-->
+                                <ul class="txtul">
+                                     <li><a href='show.aspx?id=5508' title="中华人民共和国高等教育法">中华人民共和国高等教育法</a></li><li><a href='show.aspx?id=5507' title="中华人民共和国教育法">中华人民共和国教育法</a></li><li><a href='show.aspx?id=3215' title="中华人民共和国学位条例">中华人民共和国学位条例</a></li><li><a href='show.aspx?id=3214' title="普通高等学校设置暂行条例">普通高等学校设置暂行条例</a></li><li><a href='show.aspx?id=3162' title="学位论文作假行为处理办法">学位论文作假行为处理办法</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--end m_lft-->
+<div class="m_lft" style="margin-right:10px;">
+                        	<h2>
+                            	<a href="list.aspx?id=4" class="d_n" id=hotn1 onmouseover="tab('hotn',1,2,1,'d_n','')">媒体关注</a>
+                                <a href="list.aspx?id=47" id=hotn2 onmouseover="tab('hotn',2,2,2,'d_n','')">要闻博览</a>
+                            </h2>
+                            <div class="l_box" id="hotn_cont1">
+                            	<div class="m_pic">
+                                <a href='show.aspx?id=339' target='_blank' title='聚焦海外媒体的“两会好声音”'><img src='/upload/201411/30/201411301959124687.jpg' /></a><p class='tit'><a href='show.aspx?id=339' target='_blank' title='聚焦海外媒体的“两会好声音”'>聚焦海外媒体的“两会好声音”</a></p><p class='cont'>　　3月13日北京消息 十二届全国人大会二次会议13日上午在人民大会堂闭幕。此前一天，全国政协十二届二次会议也于当日上午闭…</p>
+                                </div>
+                                <!---end m_pic-->
+                                <ul class="txtul">
+                                    <li><a href='show.aspx?id=5745' title="浙江：高标准普及15年教育">浙江：高标准普及15年教育</a></li><li><a href='show.aspx?id=5744' title="四川德阳扎根城市产业办职教">四川德阳扎根城市产业办职教</a></li><li><a href='show.aspx?id=5737' title="甘肃省属高校专项计划招收5400名贫困地区学生">甘肃省属高校专项计划招收5400名贫困地区学生</a></li><li><a href='show.aspx?id=5736' title="北京教师暑期到新疆和田家访，">北京教师暑期到新疆和田家访，</a></li><li><a href='show.aspx?id=5729' title="哈尔滨13名优秀班主任主持工作室">哈尔滨13名优秀班主任主持工作室</a></li>
+                                </ul>
+                            </div>
+                            <!--end l_box-->
+                            <div class="l_box" id="hotn_cont2" style="display:none;">
+                            	<div class="m_pic">
+                                    <a href='show.aspx?id=341' target='_blank' title='第十二届全国人民代表大会第二次会议在人民大会堂开幕'><img src='/upload/201411/30/201411301427394843.jpg' /></a><p class='tit'><a href='show.aspx?id=341' target='_blank' title='第十二届全国人民代表大会第二次会议在人民大会堂开幕'>第十二届全国人民代表大会第二次会议在人民大会堂开幕</a></p><p class='cont'>　　3月5日上午9时，第十二届全国人民代表大会第二次会议在人民大会堂开幕，听取国务院总理李克强作政府工作报告，审查计划…</p>
+                                </div>
+                                <!---end m_pic-->
+                                <ul class="txtul">
+                                     <li><a href='show.aspx?id=341' title="第十二届全国人民代表大会第二次会议在人民大会堂开幕">第十二届全国人民代表大会第二次会议在人民大会堂开幕</a></li><li><a href='show.aspx?id=5747' title="《青少年法治教育大纲》提出要在中高考中适当增加法治知识内容">《青少年法治教育大纲》提出要在中高考中适当增加法治知识内容</a></li><li><a href='show.aspx?id=5746' title="《教育部关于中央部门所属高校深化教育教学改革的指导意见》印发">《教育部关于中央部门所属高校深化教育教学改革的指导意见》印发</a></li><li><a href='show.aspx?id=5739' title="长沙理工大学深入推进研究生课程改革">长沙理工大学深入推进研究生课程改革</a></li><li><a href='show.aspx?id=5738' title="北京大学探索“互联网+教育”育人模式">北京大学探索“互联网+教育”育人模式</a></li>
+                                </ul>
+                            </div>
+                            <!--end l_box-->
+                        </div>
+                        <!--end m_lft-->
+                        <div class="m_lft">
+                        	<h2>
+                            	<a href="list.aspx?id=43" class="d_n" id=hot1 onmouseover="tab('hot',1,2,1,'d_n','')">学生就业</a>
+                                <a href="list.aspx?id=42" id=hot2 onmouseover="tab('hot',2,2,2,'d_n','')">招生考试</a></h2>
+                            <div class="l_box" id="hot_cont1">
+                            	<div class="m_pic">
+                                    <a href='show.aspx?id=101' target='_blank' title='国家促进普通高校毕业生就业政策公告'><img src='/upload/201411/30/201411302012069687.jpg' /></a><p class='tit'><a href='show.aspx?id=101' target='_blank' title='国家促进普通高校毕业生就业政策公告'>国家促进普通高校毕业生就业政策公告</a></p><p class='cont'>　　一、鼓励高校毕业生到城乡基层、中西部等地区就业1.参加“选聘高校毕业生到村任职”、“三支一扶”、“大学生志愿服务西…</p>
+                                </div>
+                                <!---end m_pic-->
+                                <ul class="txtul">
+                                    <li><a href='show.aspx?id=5683' title="高校对未就业毕业生还需“送一程”">高校对未就业毕业生还需“送一程”</a></li><li><a href='show.aspx?id=5682' title="大连高校毕业生未满5年市内购房将享补助">大连高校毕业生未满5年市内购房将享补助</a></li><li><a href='show.aspx?id=5647' title="又到一年毕业季 应届毕业生应如何理财？">又到一年毕业季 应届毕业生应如何理财？</a></li><li><a href='show.aspx?id=5646' title="广西：建档立卡贫困户家庭高校毕业生全部就业">广西：建档立卡贫困户家庭高校毕业生全部就业</a></li><li><a href='show.aspx?id=5553' title="大学生需树立务实就业观">大学生需树立务实就业观</a></li>
+                                </ul>
+                            </div>
+                            <!--end l_box-->
+                            <div class="l_box" id="hot_cont2" style="display:none;">
+                            	<div class="m_pic">
+                                    <a href='show.aspx?id=1168' target='_blank' title='教育部公布2014年高考网上咨询周时间安排'><img src='/upload/201411/30/201411302003509062.jpg' /></a><p class='tit'><a href='show.aspx?id=1168' target='_blank' title='教育部公布2014年高考网上咨询周时间安排'>教育部公布2014年高考网上咨询周时间安排</a></p><p class='cont'>　　教育部“2014年全国普通高校招生网上咨询周”活动将于5月8日在“阳光高考”信息平台上正式启动。根据全国各省市考生填报…</p>
+                                </div>
+                                <!---end m_pic-->
+                                <ul class="txtul">
+                                    <li><a href='show.aspx?id=5681' title="教育部：进一步加强高校自主招生信息公开和监督管理工作">教育部：进一步加强高校自主招生信息公开和监督管理工作</a></li><li><a href='show.aspx?id=5680' title="我省2016年普通高招现场咨询活动圆满结束">我省2016年普通高招现场咨询活动圆满结束</a></li><li><a href='show.aspx?id=2311' title="教育部关于印发《2015年全国硕士研究生招生工作管理规定》的通知">教育部关于印发《2015年全国硕士研究生招生工作管理规定》的通知</a></li><li><a href='show.aspx?id=2310' title="2015年全国硕士研究生招生考试公告">2015年全国硕士研究生招生考试公告</a></li><li><a href='show.aspx?id=1168' title="教育部公布2014年高考网上咨询周时间安排">教育部公布2014年高考网上咨询周时间安排</a></li>
+                                </ul>
+                            </div>
+                            <!--end l_box-->
+                        </div>
+                        <!--end m_lft-->
+</div>
+<div class="clear"></div>
+
+<div class="zhuanjia">
+<div class="zhuanjiaitem"><a href="plist.aspx?id=37" target="_blank"><img src="imgs/item_1.jpg" /></a></div>
+<div class="zhuanjialist" id="QQMarquee2" style="width:670px;">
+<ul class="picul" id="QQMarqueeCoutent2">
+<li><a href='show.aspx?id=142' title='刘林同志' target='_blank'><img src='/upload/201402/19/201402191814031250.jpg' /><span>刘林同志</span></a></li><li><a href='show.aspx?id=139' title='顾明远同志' target='_blank'><img src='/upload/201402/19/201402191731259062.jpg' /><span>顾明远同志</span></a></li><li><a href='show.aspx?id=138' title='许嘉璐同志' target='_blank'><img src='/upload/201402/19/201402191726184375.jpg' /><span>许嘉璐同志</span></a></li><li><a href='show.aspx?id=137' title='廖 鸿同志' target='_blank'><img src='/upload/201402/19/201402191722156562.jpg' /><span>廖 鸿同志</span></a></li><li><a href='show.aspx?id=136' title='胡大白同志' target='_blank'><img src='/upload/201402/19/201402191719514375.jpg' /><span>胡大白同志</span></a></li><li><a href='show.aspx?id=135' title='周延波同志' target='_blank'><img src='/upload/201402/19/201402191715585000.jpg' /><span>周延波同志</span></a></li><li><a href='show.aspx?id=134' title='曹勇安同志' target='_blank'><img src='/upload/201402/19/201402191711013906.jpg' /><span>曹勇安同志</span></a></li><li><a href='show.aspx?id=123' title='陶西平同志' target='_blank'><img src='/upload/201402/19/201402191305514218.jpg' /><span>陶西平同志</span></a></li>
+</ul>
+</div>
+</div>
+
+</div>
+<div class="right-index">
+<div class="gonggao">
+<div class="item"><span><a href="plist.aspx?id=34">更多</a></span><strong>教育领导</strong></div>
+<div class="gonggaolist">
+<ul class="lingdao">
+
+<li>
+<a href="show.aspx?id=6"><img src="upload/jyld.jpg" /></a>
+<p class="name">刘延东同志简历</p>
+<p class="zhiwu">中共中央政治局委员，副总理。</p>
+</li>
+
+<li>
+<a href="show.aspx?id=56"><img src="/upload/20160815/201608152148384247.jpg" /></a>
+<p class="name">陈宝生同志简历</p>
+<p class="zhiwu">教育部部长、党组书记。</p>
+</li>
+
+</ul>
+</div>
+
+<div class="item"><span><a href="list.aspx?id=36">更多</a></span><strong>人事任免</strong></div>
+<div class="gonggaolist">
+<ul class="txtul">
+<li><a href='show.aspx?id=1532' title="教育部关于游森任职的通知">教育部关于游森任职的通知</a></li><li><a href='show.aspx?id=1531' title="教育部关于袁小平任职的通知">教育部关于袁小平任职的通知</a></li><li><a href='show.aspx?id=1399' title="孙也刚、于志刚分别任中国海洋大学党委书记、校长">孙也刚、于志刚分别任中国海洋大学党委书记、校长</a></li><li><a href='show.aspx?id=1067' title="赵继任东北大学校长">赵继任东北大学校长</a></li>
+</ul>
+</div>
+
+
+<div class="zhengce">
+<div class="zhengceitem"><strong>电子服务平台</strong><span><a href="/cxxj.aspx">更多</a></span></div>
+<div class="zhengcelist">
+<ul class="pingtai">
+<li style="margin-right:10px"><a href="/member/dangan.aspx">本人查询</a></li>
+<li><a href="/cxxj.aspx">学籍查询</a></li>
+<li style="margin-right:10px"><a href="/cxzs.aspx">证书查询</a></li>
+<li><a href="/cxda.aspx">档案管理</a></li>
+<li style="margin-right:10px"><a href="/zsrz.aspx">证书认证</a></li>
+<li><a href="/zsrz_shenqing.aspx">申请认证</a></li>
+<li style="margin-right:10px"><a href="/nianjian.aspx">院校年检</a></li>
+<li><a href="/addschool.aspx">院校加入</a></li>
+</ul>
+</div>
+</div>
+
+<div class="zhengce">
+<div class="zhengceitem"><strong>招生简章备案</strong><span><a href="list.aspx?id=45" target="_blank">更多</a></span></div>
+<div class="zhengcelist">
+<ul class="txtul">
+<li><a href='show.aspx?id=113' title="北京建设大学招生广告" target='_blank'>北京建设大学招生广告</a></li><li><a href='show.aspx?id=120' title="北京美国英语语言学院招生简章与广告备案（2013-2014年）" target='_blank'>北京美国英语语言学院招生简章与广告备案（2013-2014年）</a></li><li><a href='show.aspx?id=119' title="北京美国英语语言学院招生广告（2013-2014年）" target='_blank'>北京美国英语语言学院招生广告（2013-2014年）</a></li><li><a href='show.aspx?id=118' title="中国教育国际交流研修学院招生简章与广告备案" target='_blank'>中国教育国际交流研修学院招生简章与广告备案</a></li><li><a href='show.aspx?id=117' title="北京瀚林职业研修学院招生简章与广告备案（2013-2014年）" target='_blank'>北京瀚林职业研修学院招生简章与广告备案（2013-2014年）</a></li><li><a href='show.aspx?id=116' title="北京金融学院招生简章与广告备案（2013-2014年）" target='_blank'>北京金融学院招生简章与广告备案（2013-2014年）</a></li><li><a href='show.aspx?id=115' title="北京黄埔大学招生简章与广告备案（2013-2014年）" target='_blank'>北京黄埔大学招生简章与广告备案（2013-2014年）</a></li><li><a href='show.aspx?id=114' title="北京高等秘书研修学院招生简章与广告备案（2013-2014年）" target='_blank'>北京高等秘书研修学院招生简章与广告备案（2013-2014年）</a></li><li><a href='show.aspx?id=112' title="北京涉外经济专修学院招生简章与广告备案（2013-2014年）" target='_blank'>北京涉外经济专修学院招生简章与广告备案（2013-2014年）</a></li><li><a href='show.aspx?id=111' title="北京计算机专修学院招生简章与广告备案（2013-2014年）" target='_blank'>北京计算机专修学院招生简章与广告备案（2013-2014年）</a></li>
+</ul>
+</div>
+</div>
+
+
+<div class="zhengce">
+<div class="zhengceitem"><strong>专家答疑</strong><span><a href="list.aspx?id=44" target="_blank">更多</a></span></div>
+<div class="zhengcelist">
+<ul class="txtul">
+<li><a href='show.aspx?id=1212' title="2014高考应考锦囊：高考生考前三大注意事项" target='_blank'>2014高考应考锦囊：高考生考前三大注意事项</a></li><li><a href='show.aspx?id=1211' title="专家支招：数学高考切记“三注意” 表达须规范" target='_blank'>专家支招：数学高考切记“三注意” 表达须规范</a></li><li><a href='show.aspx?id=428' title="如何提炼办学理念" target='_blank'>如何提炼办学理念</a></li><li><a href='show.aspx?id=427' title="本科生该如何对待毕业论文和答辩" target='_blank'>本科生该如何对待毕业论文和答辩</a></li><li><a href='show.aspx?id=426' title="大学生应如何处理学习与实习的关系" target='_blank'>大学生应如何处理学习与实习的关系</a></li><li><a href='show.aspx?id=82' title="高考前如何做好孩子的心理调适工作" target='_blank'>高考前如何做好孩子的心理调适工作</a></li><li><a href='show.aspx?id=81' title="“不让孩子输在起跑线上”危害在哪里" target='_blank'>“不让孩子输在起跑线上”危害在哪里</a></li><li><a href='show.aspx?id=80' title="孩子是不是不能输在起跑线上" target='_blank'>孩子是不是不能输在起跑线上</a></li><li><a href='show.aspx?id=78' title="如何构建师德学习活动的长效机制" target='_blank'>如何构建师德学习活动的长效机制</a></li><li><a href='show.aspx?id=77' title="如何认识高考改革的复杂性" target='_blank'>如何认识高考改革的复杂性</a></li>
+</ul>
+</div>
+</div>
+
+
+</div>
+</div>
+<div class="clear"></div>
 </div>
 <!-- inc:foot -->

@@ -1,40 +1,73 @@
-<div class="copyright">
-	<!-- run:$link = phpok("link") -->
-	<!-- if($link[rslist]) -->
-	<div class="link">
-		<h3>{:$link[me][title]}</h3>
-		<span>
-		<!-- $link[rslist] AS $key=>$value -->
-		<a href="{:$value[link_url]}" title="{:$value[title]}" target="_blank">{:$value[title]}</a>
-		<!-- end -->
-		</span>
-		<a href="{:module_url($link[me])}" class="more">更多&gt;&gt;</a>
-	</div>
-	<!-- end -->
-	<div class="bottom"><!-- run:$copyright = phpok('copyright') -->{:$copyright[content]}<!-- run:unset($copyright) --></div>
+    
+<div class="clear"></div><div class="linker">
+    	<div class="linker_t">
+        	<ul>
+            	<li id="link1" onmouseover="tab('link',1,6,1,'current','')" class="current">教育部委</li>
+                <li id="link2" onmouseover="tab('link',2,6,2,'current','')">行业协会</li>
+                <li id="link3" onmouseover="tab('link',3,6,3,'current','')">教育媒体</li>
+                <li id="link4" onmouseover="tab('link',4,6,4,'current','')">科研院所</li>
+                <li id="link5" onmouseover="tab('link',5,6,5,'current','')">友情链接</li>
+                <li id="link6" onmouseover="tab('link',6,6,6,'current','')">地方中心</li>
+            </ul>
+        </div>
+        <div class="linker_c">
+        	<div id="link_cont1" style="display: block; ">
+        	<ul>
+        	<li><a href='http://www.moe.edu.cn/' title='中华人民共和国教育部' target='_blank'>中华人民共和国教育部</a></li><li><a href='http://www.bjedu.gov.cn/publish/portal27/' title='北京市教委' target='_blank'>北京市教委</a></li><li><a href='http://www.shmec.gov.cn/' title='上海市教委' target='_blank'>上海市教委</a></li><li><a href='http://www.cqedu.cn' title='重庆市教委' target='_blank'>重庆市教委</a></li><li><a href='http://www.sdedu.gov.cn' title='山东省教育厅' target='_blank'>山东省教育厅</a></li><li><a href='http://www.zjedu.gov.cn' title='浙江省教育厅' target='_blank'>浙江省教育厅</a></li><li><a href='http://www.haedu.gov.cn/' title='河南省教育厅' target='_blank'>河南省教育厅</a></li><li><a href='http://www.hbe.gov.cn/' title='湖北省教育厅' target='_blank'>湖北省教育厅</a></li><li><a href='http://www.hee.cn/' title='河北省教育厅' target='_blank'>河北省教育厅</a></li><li><a href='http://www.fjedu.gov.cn' title='福建省教育厅' target='_blank'>福建省教育厅</a></li><li><a href='http://www.jxedu.gov.cn/' title='江西省教育厅' target='_blank'>江西省教育厅</a></li><li><a href='http://www.gxedu.gov.cn/' title='广西省教育厅' target='_blank'>广西省教育厅</a></li><li><a href='http://www.ynjy.cn/indexweb.jsp' title='云南省教育厅' target='_blank'>云南省教育厅</a></li><li><a href='http://www.lnen.cn/' title='辽宁省教育厅' target='_blank'>辽宁省教育厅</a></li><li><a href='http://www.hlje.net/' title='黑龙江省教育厅' target='_blank'>黑龙江省教育厅</a></li><li><a href='http://gov.hnedu.cn/index.html' title='湖南省教育厅' target='_blank'>湖南省教育厅</a></li><li><a href='http://www.sxedu.gov.cn/' title='山西省教育厅' target='_blank'>山西省教育厅</a></li><li><a href='http://www.nmgov.edu.cn/' title='内蒙古教育厅' target='_blank'>内蒙古教育厅</a></li><li><a href='http://www.nxedu.gov.cn/main/index.html' title='宁夏省教育厅' target='_blank'>宁夏省教育厅</a></li><li><a href='http://www.ahedu.gov.cn/' title='安徽省教育厅' target='_blank'>安徽省教育厅</a></li><li><a href='http://www.scedu.net/' title='四川省教育厅' target='_blank'>四川省教育厅</a></li><li><a href='http://www.xjedu.gov.cn/' title='新疆省教育厅' target='_blank'>新疆省教育厅</a></li><li><a href='http://edu.hainan.gov.cn/' title='海南省教育厅' target='_blank'>海南省教育厅</a></li><li><a href='http://www.gzsjyt.gov.cn/' title='贵州省教育厅' target='_blank'>贵州省教育厅</a></li><li><a href='www.qhjyt.gov.cn' title='青海省教育厅' target='_blank'>青海省教育厅</a></li><li><a href='http://www.gsedu.gov.cn/' title='甘肃省教育厅' target='_blank'>甘肃省教育厅</a></li><li><a href='http://www.xzedu.com.cn/' title='西藏自治区教育厅' target='_blank'>西藏自治区教育厅</a></li><li><a href='http://www.edugd.cn/index.do' title='广东省教育厅' target='_blank'>广东省教育厅</a></li><li><a href='http://www.jledu.gov.cn/' title='吉林省教育厅' target='_blank'>吉林省教育厅</a></li>
+            </ul>
+            </div>
+            <div id="link_cont2" style="display: none; ">
+           <ul>
+        	<li><a href='http://www.cphedu.com/' title='中国民办高等教育委员会' target='_blank'>中国民办高等教育委员会</a></li><li><a href='http://www.cse.edu.cn/' title='中国教育学会' target='_blank'>中国教育学会</a></li><li><a href='http://www.hie.edu.cn/' title='中国高等教育学会' target='_blank'>中国高等教育学会</a></li><li><a href='http://www.sports.edu.cn/' title='教育部体育协会' target='_blank'>教育部体育协会</a></li><li><a href='http://www.cvae.com.cn/' title='教育部职业教育中心' target='_blank'>教育部职业教育中心</a></li><li><a href='http://www.ceaie.edu.cn/' title='中国教育国际交流协会' target='_blank'>中国教育国际交流协会</a></li><li><a href='http://www.etr.com.cn/' title='中国教育技术网' target='_blank'>中国教育技术网</a></li><li><a href='http://www.edu111.cn/' title='北京民办教育协会' target='_blank'>北京民办教育协会</a></li><li><a href='http://www.hbmbedu.com/' title='湖北民办教育协会' target='_blank'>湖北民办教育协会</a></li><li><a href='http://www.tymbjy.com/' title='太原民办教育协会' target='_blank'>太原民办教育协会</a></li><li><a href='http://218.9.77.149/' title='黑龙江省民办教育协会' target='_blank'>黑龙江省民办教育协会</a></li><li><a href='http://www.ngea.net/' title='哈尔滨民办教育协会' target='_blank'>哈尔滨民办教育协会</a></li><li><a href='http://www.lnmbjy.com/' title='辽宁省民办教育协会' target='_blank'>辽宁省民办教育协会</a></li><li><a href='http://www.hnmbedu.cn/' title='河南民办教育协会' target='_blank'>河南民办教育协会</a></li><li><a href='http://canedu.org.cn/' title='中国民办教育协会' target='_blank'>中国民办教育协会</a></li><li><a href='http://mbjy.changsha.cn/' title='上沙民办教育协会' target='_blank'>上沙民办教育协会</a></li><li><a href='http://www.whmbedu.com/' title='武汉民办教育协会' target='_blank'>武汉民办教育协会</a></li><li><a href='http://www.hbmbedu.com/' title='湖北民办教育协会' target='_blank'>湖北民办教育协会</a></li>
+            </ul>
+            </div>
+            <div id="link_cont3" style="display: none; ">
+            <ul>
+        	<li><a href='http://www.chsi.ac.cn/' title='中国民办高等教育学生信息网（官网）' target='_blank'>中国民办高等教育学生信息网（官网）</a></li><li><a href='http://www.reader8.cn/' title='读书人网' target='_blank'>读书人网</a></li><li><a href='http://www.txiao.com/' title='淘校网' target='_blank'>淘校网</a></li><li><a href='http://www.sczsxx.com/' title='四川招生信息网' target='_blank'>四川招生信息网</a></li><li><a href='http://www.baokao.net/' title='高校招生网' target='_blank'>高校招生网</a></li><li><a href='http://www.86zs.com/' title='中国招生信息网' target='_blank'>中国招生信息网</a></li><li><a href='http://www.gdzsxx.com/' title='广东招生信息网' target='_blank'>广东招生信息网</a></li><li><a href='http://gaokao.chsi.com.cn/' title='阳光高考招生在线' target='_blank'>阳光高考招生在线</a></li><li><a href='http://www.zk789.net/' title='招生考试在线' target='_blank'>招生考试在线</a></li><li><a href='http://www.chinaeea.net/' title='中国招生考试在线' target='_blank'>中国招生考试在线</a></li><li><a href='http://yz.chsi.com.cn/' title='研究生招生信息网' target='_blank'>研究生招生信息网</a></li><li><a href='http://www.sdzs.gov.cn/' title='山东招生考试院' target='_blank'>山东招生考试院</a></li><li><a href='http://www.bjedu.gov.cn/publish/portal27/' title='北京教育信息网' target='_blank'>北京教育信息网</a></li><li><a href='http://chaxun.neea.edu.cn/examcenter/main.jsp' title='教育部考试中心' target='_blank'>教育部考试中心</a></li><li><a href='http://www.eol.cn/' title='中国教育在线' target='_blank'>中国教育在线</a></li><li><a href='http://www.zzedu.net.cn/' title='郑州教育信息网' target='_blank'>郑州教育信息网</a></li><li><a href='http://www.chinaedu.edu.cn/' title='中国教育信息网' target='_blank'>中国教育信息网</a></li>
+            </ul>
+            </div>
+            <div id="link_cont4" style="display: none; ">
+           <ul>
+        	<li><a href='http://www.nies.net.cn/' title='中国教育科学研究院' target='_blank'>中国教育科学研究院</a></li><li><a href='http://www.zhongguanyuan.org.cn/' title='中国管理科学研究院' target='_blank'>中国管理科学研究院</a></li><li><a href='http://jks.zzedu.net.cn/' title='郑州市教育科学研究' target='_blank'>郑州市教育科学研究</a></li><li><a href='http://se.whut.edu.cn/' title='武汉理工大学高等教育研究所' target='_blank'>武汉理工大学高等教育研究所</a></li><li><a href='http://www.tjjky.org/' title='天津市教育科学研究院' target='_blank'>天津市教育科学研究院</a></li><li><a href='http://qq.hnjky.net/' title='湖南教育发展研究所' target='_blank'>湖南教育发展研究所</a></li><li><a href='http://www.cnsaes.org/homepage/' title='上海市教育科学研究院' target='_blank'>上海市教育科学研究院</a></li><li><a href='http://www.suzhicn.org/index.php' title=' 中国管理科学研究院素质教育研究所' target='_blank'> 中国管理科学研究院素质教育研究所</a></li><li><a href='http://jky.hust.edu.cn/' title='华中科技大学教育科学研究院' target='_blank'>华中科技大学教育科学研究院</a></li><li><a href='http://www.cnjks.cn/' title='中国管理科学研究院' target='_blank'>中国管理科学研究院</a></li><li><a href='http://www.fjjyxy.com/research/' title='福建科普研究院' target='_blank'>福建科普研究院</a></li><li><a href='http://www.pjky.com/' title='上海科普研究院' target='_blank'>上海科普研究院</a></li><li><a href='http://www.51jyky.com.cn/' title='黑龙江教育科学研究院' target='_blank'>黑龙江教育科学研究院</a></li><li><a href='http://www.zjedusri.com.cn/' title='浙江科学研究院' target='_blank'>浙江科学研究院</a></li><li><a href='http://www.ahjky.com.cn/' title='安徽教育科学研究院' target='_blank'>安徽教育科学研究院</a></li>
+            </ul>
+            </div>
+             <div id="link_cont5" style="display: none; ">
+             <ul>
+        	<li><a href='http://www.hkc.edu.cn/' title='海口经济学院' target='_blank'>海口经济学院</a></li><li><a href='http://www.jxcsedu.com/' title='江西城市职业学院' target='_blank'>江西城市职业学院</a></li><li><a href='http://www.nclg.com.cn/' title='南昌理工学院' target='_blank'>南昌理工学院</a></li><li><a href='http://www.nanshan.edu.cn/' title='烟台南山学院' target='_blank'>烟台南山学院</a></li><li><a href='http://www.huanghaicollege.com/' title='青岛黄海学院' target='_blank'>青岛黄海学院</a></li><li><a href='http://www.bjjsy1985.cn/' title='北京科技管理学院' target='_blank'>北京科技管理学院</a></li><li><a href='http://www.ynxzy.com/' title='云南新兴职业学院' target='_blank'>云南新兴职业学院</a></li><li><a href='http://www.scuvc.com/' title='四川城市学院' target='_blank'>四川城市学院</a></li><li><a href='http://www.wucc.cn/' title='温州大学城市学院' target='_blank'>温州大学城市学院</a></li><li><a href='http://www.guangshaxy.com/' title='浙江广厦职业技术学院' target='_blank'>浙江广厦职业技术学院</a></li><li><a href='http://www.nbdhyu.edu.cn/' title='宁波大红鹰学院' target='_blank'>宁波大红鹰学院</a></li><li><a href='http://www.zjsru.edu.cn/' title='浙江树人学院' target='_blank'>浙江树人学院</a></li><li><a href='云南经贸外事职业学院' title='长春建筑学院' target='_blank'>长春建筑学院</a></li><li><a href='http://www.ynjw.net/' title='云南经贸外事职业学院' target='_blank'>云南经贸外事职业学院</a></li><li><a href='http://www.esu.edu.cn/' title='上海东海职业技术学院' target='_blank'>上海东海职业技术学院</a></li><li><a href='http://www.eurasia.edu/' title='西安欧亚学院' target='_blank'>西安欧亚学院</a></li><li><a href='http://www.sxtbu.net/' title='山西工商学院' target='_blank'>山西工商学院</a></li><li><a href='http://www.qdbhu.edu.cn/' title='青岛滨海学院' target='_blank'>青岛滨海学院</a></li><li><a href='http://www.ycxy.com/cn/index.html' title='山东英才学院' target='_blank'>山东英才学院</a></li><li><a href='http://www.jxbsu.com/' title='江西科技学院' target='_blank'>江西科技学院</a></li><li><a href='http://www.sju.js.cn/' title='三江学院' target='_blank'>三江学院</a></li><li><a href='http://www.sdzs.gov.cn/ad/bjkjzyxy/Index.html' title='北京科技学院' target='_blank'>北京科技学院</a></li><li><a href='http://www.bcu.edu.cn/' title='北京城市学院' target='_blank'>北京城市学院</a></li><li><a href='http://www.bgu.edu.cn/' title='北京吉利大学' target='_blank'>北京吉利大学</a></li><li><a href='http://www.hhstu.edu.cn/' title='黄河科技学院' target='_blank'>黄河科技学院</a></li>
+            </ul>
+             </div>
+           
+              <div id="link_cont6" style="display: none; ">
+            <ul>
+        	<li><a href='http://www.chsi.ac.cn/' title='济南管理中心' target='_blank'>济南管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='昆山管理中心' target='_blank'>昆山管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='福州管理中心' target='_blank'>福州管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='厦门管理中心' target='_blank'>厦门管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='珠海管理中心' target='_blank'>珠海管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='温州管理中心' target='_blank'>温州管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='苏州管理中心' target='_blank'>苏州管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='西安管理中心' target='_blank'>西安管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='长沙管理中心' target='_blank'>长沙管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='郑州管理中心' target='_blank'>郑州管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='青岛管理中心' target='_blank'>青岛管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='辽宁管理中心' target='_blank'>辽宁管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='武汉管理中心' target='_blank'>武汉管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='佛山管理中心' target='_blank'>佛山管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='重庆管理中心' target='_blank'>重庆管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='成都管理中心' target='_blank'>成都管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='杭州管理中心' target='_blank'>杭州管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='天津管理中心' target='_blank'>天津管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='广州管理中心' target='_blank'>广州管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='上海管理中心' target='_blank'>上海管理中心</a></li><li><a href='http://www.chsi.ac.cn/' title='北京管理中心' target='_blank'>北京管理中心</a></li>
+            </ul>
+             </div>
+
+        </div>
+    </div>
+<div class="clear"></div>
+<div class="footer">
+<div class="footnav"><a href="default.aspx">首 页</a> | <a href='about.aspx?id=28'>平台介绍</a> | <a href='about.aspx?id=29'>资质批文</a> | <a href='about.aspx?id=30'>主管单位</a> | <a href='alist.aspx?id=31'>通知公告</a> | <a href='about.aspx?id=32'>客服中心</a> | <a href='about.aspx?id=33'>版权声明</a> | <a href='about.aspx?id=51'>用户条款</a></div>
+<div class="footcontent">
+<div class="footleft">
+主管：北京民办教育信息咨询服务中心<br />
+网站标题：中国民办高等教育学生信息网(官网)<br />
+指导：全国民办高等教育学生信息咨询与就业指导中心<br />
+法律顾问：刘建国 | 软件著作权公安局备案号:1101083558号<br />
+中华人民共和国工业和信息化部网站备案编号：京ICP备11028094号<br />
+北京办公地址：北京市海淀区学信信息大厦B座16层　邮政编码:100005<br />
+通信地址：北京市100005-019信箱　    技术支持：北京凤凰教育信息科技中心<br />
+ 
 </div>
-<!-- run:$kflist = phpok('qq') -->
-<!-- if($kflist[rslist] && is_array($kflist[rslist]) && count($kflist[rslist])>0) -->
-<script type="text/javascript">
-if($.browser.msie && parseInt($.browser.version, 10) < 7)
-{
-	$(document).ready(function(){
-		 $(window).scroll(function(){
-			 $("#qqonline_float").css({top:$(this).scrollTop()+$(this).height()-500});
-		 });
-	});
-}
-</script>
-<div id="qqonline_float">
-	<div class="qq-top"></div>
-	<div class="qq-list">
-		<!-- $kflist[rslist] AS $key=>$value -->
-		<div class="myqq">{:$value[kfcode]}</div>
-		<!-- end -->
-	</div>
-	<div class="qq-bottom"></div>
+<div class="footright">
+<a key ="54bdd06cc274e73ed456617e"  logo_size="124x47"  logo_type="realname"  href="http://www.anquan.org" ><script src="scripts/jquery/aq_auth.js"></script></a>
 </div>
-<!-- end -->
-{:$plugin_html}
+</div>
+</div>
+</div>
+<script type="text/javascript" src="images/imgs/js.js"></script>
+<SCRIPT language=javascript>
+    new Marquee(["QQMarquee2", "QQMarqueeCoutent2"], 2, 2, 650, 150, 20, 0, 0);
+</SCRIPT>
 </body>
 </html>
