@@ -45,28 +45,32 @@ class cert_m extends Model
 
         if (isset($id1['id']) && isset($id2['id']) && !isset($id3['id'])) {
             if ($id1['id'] == $id2['id']) {
-                $sql = "SELECT * FROM ".$this->db->prefix."user_ext WHERE id = ".$id1['id'];
+                $id_flag = $id1['id'];
+                $sql = "SELECT * FROM ".$this->db->prefix."user_ext ue JOIN WHERE id = ".$id_flag;
                 $result = $this->db->get_one($sql);
             }
         }
 
         if (isset($id1['id']) && isset($id3['id']) && !isset($id2['id'])) {
             if ($id1['id'] == $id3['id']) {
-                $sql = "SELECT * FROM ".$this->db->prefix."user_ext WHERE id = ".$id1['id'];
+                $id_flag = $id1['id'];
+                $sql = "SELECT * FROM ".$this->db->prefix."user_ext WHERE id = ".$id_flag;
                 $result = $this->db->get_one($sql);
             }
         }
 
         if (isset($id2['id']) && isset($id3['id']) && !isset($id1['id'])) {
             if ($id2['id'] == $id3['id']) {
-                $sql = "SELECT * FROM ".$this->db->prefix."user_ext WHERE id = ".$id2['id'];
+                $id_flag = $id2['id'];
+                $sql = "SELECT * FROM ".$this->db->prefix."user_ext WHERE id = ".$id_flag;
                 $result = $this->db->get_one($sql);
             }
         }
 
         if (isset($id2['id']) && isset($id3['id']) && isset($id1['id'])) {
             if ($id2['id'] == $id3['id']) {
-                $sql = "SELECT * FROM ".$this->db->prefix."user_ext WHERE id = ".$id2['id'];
+                $id_flag = $id2['id'];
+                $sql = "SELECT * FROM ".$this->db->prefix."user_ext WHERE id = ".$id_flag;
                 $result = $this->db->get_all($sql);
             }
         }
@@ -80,6 +84,14 @@ class cert_m extends Model
                     $data[$value['field']] = $value['val'];
                 }
             }
+
+            $sql = "SELECT thumb_id FROM ".$this->db->prefix."user WHERE id = ".$id_flag;
+            $user = $this->db->get_one($sql);
+
+            $sql = "SELECT filename FROM ".$this->db->prefix."upfiles WHERE id = ".$user['thumb_id'];
+            $img = $this->db->get_one($sql);
+
+            $data['image'] = $img['filename'];
         }
 		return $data;
 	}
