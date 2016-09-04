@@ -3,7 +3,7 @@
 .cx_main table td{font-size:12px;color:grey;}
 </style>
 <div class="snav">
-<div class="tongzhi"><div id="scrollDiv">
+<div class="tongzhi guangli"><div id="scrollDiv">
      <ul style="margin-top: 0px;">
      
      <p><a href="show.aspx?id=5611" target="_blank">教育部关于印发《教育信息化“十三五”规划》的通知…</a></p>
@@ -63,6 +63,11 @@
             alert(top.location);
             return false;
         }
+		
+		$('.guangli').click(function(){
+			alert('请先注册，登陆！');return false;
+		});
+		
     });
 </script>
 <div class="main">
@@ -173,7 +178,7 @@
 <!--查询内容--><div class="dayin"><div class="shuoming">说明：查询到的证书信息可以选择打印或者发送到指定邮箱备份，本人查询功能学员本人可以凭注册邮箱和密码免费查询自己的学籍信息、证书信息、档案信息及证书认证信息，信息中用*号代表的，表示当前尚无该项信息，如信息有误，请联系毕业院校学籍证书管理部门。</div></div>
 </div>
 
-<div class="right">
+<div class="right guangli">
 <style>
         .lingdao{width:220px; margin:5px auto;}
 .lingdao li{width:220px; height:75px; margin-top:10px}
@@ -187,7 +192,7 @@
 
 
 
-<div class="gonggao" style=" border-top:none">
+<div class="gonggao guangli" style=" border-top:none">
 
 
 <div class="zhengce" style="margin-top:0px;">
@@ -215,7 +220,7 @@
 <div class="zhengce" style="margin-top:5px;">
 <div class="zhengceitem"><strong>热点排行榜</strong></div>
 <div class="zhengcelist">
-<ul class="h_ul hs">
+<ul class="h_ul hs guangli">
  <li><a href='show.aspx?id=379' title="促大学生就业 财政多方“铺路”" target='_blank'>促大学生就业 财政多方“铺路”</a></li><li><a href='show.aspx?id=378' title="2014年就业月历 机会不容错过" target='_blank'>2014年就业月历 机会不容错过</a></li><li><a href='show.aspx?id=452' title="西安思源学院2014年“赏花•踏春•校园开放月”即将举行" target='_blank'>西安思源学院2014年“赏花•踏春•校园开放月”即将举行</a></li><li><a href='show.aspx?id=100' title="人力资源和社会保障部：落实民族地区积极就业政策" target='_blank'>人力资源和社会保障部：落实民族地区积极就业政策</a></li><li><a href='show.aspx?id=469' title="正视“择业难”背后的社会心态" target='_blank'>正视“择业难”背后的社会心态</a></li><li><a href='show.aspx?id=399' title="教育部教育装备专家指导委员会成立" target='_blank'>教育部教育装备专家指导委员会成立</a></li><li><a href='show.aspx?id=6' title="刘延东同志简历" target='_blank'>刘延东同志简历</a></li><li><a href='show.aspx?id=370' title="围绕立德树人培育和弘扬社会主义核心价值观" target='_blank'>围绕立德树人培育和弘扬社会主义核心价值观</a></li>
 </ul>
 </div>
@@ -224,21 +229,21 @@
 <div class="zhengceitem"><strong>电子服务平台</strong></div>
 <div class="zhengcelist">
 <ul class="pingtai">
-<li style="margin-right:10px"><a href="/member/dangan.aspx">本人查询</a></li>
-<li><a href="/cxxj.aspx">学籍查询</a></li>
+<li class="guangli" style="margin-right:10px"><a href="/member/dangan.aspx">本人查询</a></li>
+<li class="guangli"><a href="/cxxj.aspx">学籍查询</a></li>
 <li style="margin-right:10px"><a href="/cxzs.aspx">证书查询</a></li>
-<li><a href="/cxda.aspx">档案管理</a></li>
+<li class="guangli"><a href="/cxda.aspx">档案管理</a></li>
 <li style="margin-right:10px"><a href="/zsrz.aspx">证书认证</a></li>
-<li><a href="/zsrz_shenqing.aspx">申请认证</a></li>
-<li style="margin-right:10px"><a href="/nianjian.aspx">院校年检</a></li>
-<li><a href="/addschool.aspx">院校加入</a></li>
+<li class="guangli"><a href="/zsrz_shenqing.aspx">申请认证</a></li>
+<li class="guangli" style="margin-right:10px"><a href="/nianjian.aspx">院校年检</a></li>
+<li class="guangli"><a href="/addschool.aspx">院校加入</a></li>
 </ul>
 </div>
 </div>
     
 <div class="zhengce" style="margin-top:5px; display:none" id="qq">
 <div class="zhengceitem"><strong>全国免费客服</strong></div>
-<div class="zhengcelist" style="line-height:25px; font-size:16px; font-weight:bold; color:#A1D6F3; padding-bottom:10px;">
+<div class="zhengcelist guangli" style="line-height:25px; font-size:16px; font-weight:bold; color:#A1D6F3; padding-bottom:10px;">
 010-52725863 (信息中心)  <br />   010-52725865 (审核中心）   <br /><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes"><img border="0"  align="absmiddle" src="http://wpa.qq.com/pa?p=2::51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
 </div>
 </div>
@@ -246,4 +251,5 @@
 </div>
 </div>
 </div>
+<script type="text/javascript" src="images/imgs/jquery-1.10.2.min.js"></script>
 <!-- inc:foot -->
