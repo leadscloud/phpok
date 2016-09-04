@@ -369,7 +369,7 @@ class post_c extends Control
 		$array_sys["qty"] = $this->trans_lib->int("qty");//产品数量
 		$array_sys["is_qty"] = $this->trans_lib->int("is_qty");//是否启用产品数量统计
 		$array_sys["qty_unit"] = $this->trans_lib->safe("qty_unit");//产品数量
-
+		
 		$insert_id = $this->post_m->save_sys($array_sys,$id);//存储数据
 		if(!$insert_id)
 		{
