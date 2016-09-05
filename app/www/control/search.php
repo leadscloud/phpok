@@ -143,22 +143,7 @@ class search_c extends Control
         // 证书查询标志
 		$flag = $this->trans_lib->safe("flag");
         if (isset($flag) && 'cert_query' == $flag) {
-				//判断是否有使用验证码
-			if(function_exists("imagecreate") && defined("SYS_VCODE_USE") && SYS_VCODE_USE == true)
-			{
-				$chk = $this->trans_lib->safe("sys_check");
-				if(!$chk)
-				{
-					error($this->lang["login_vcode_empty"],$_SERVER["HTTP_REFERER"]);
-				}
-				$chk = md5($chk);
-				if($chk != $_SESSION[SYS_VCODE_VAR])
-				{
-					error($this->lang["login_vcode_false"],$_SERVER["HTTP_REFERER"]);
-				}
-				unset($_SESSION[SYS_VCODE_VAR]);
-			}
-		
+						
 			$certdata = $this->cert_m->get_one($query['idcard'], $query['fullname'], $query['certnum']);
             $this->tpl->assign("certdata", $certdata);       
             //$this->tpl->assign("fullname", $certdata['fullname']);            
@@ -169,6 +154,31 @@ class search_c extends Control
         }
 		
 		$this->tpl->display($tplfile.".".$this->tpl->ext);
+	}
+	
+	function code_f(){
+		$code = $_POST['code'];
+		//判断是否有使用验证码
+		if(function_exists("imagecreate") && defined("SYS_VCODE_USE") && SYS_VCODE_USE == true)
+		{
+			//$chk = $this->trans_lib->safe("sys_check");
+			//if(!$chk)
+			//{
+			//	error($this->lang["login_vcode_empty"],$_SERVER["HTTP_REFERER"]);
+			//}
+			//$chk = md5($chk);
+			$chk = md5($code);
+			if($chk != $_SESSION[SYS_VCODE_VAR])
+			{
+				echo json_encode(array('status'=>1));
+				//error($this->lang["login_vcode_false"],$_SERVER["HTTP_REFERER"]);
+			}else{
+				echo json_encode(array('status'=>0));
+			}
+			unset($_SESSION[SYS_VCODE_VAR]);
+		}
+		exit;
+		
 	}
 
 	//取得某个模块下的分类

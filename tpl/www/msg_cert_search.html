@@ -65,13 +65,6 @@ function phpok_chklogin()
         alert("必须填两个信息以上！");
         return false;
     }
-	
-	var chkcode = $("#sys_check").val();
-	if(!chkcode)
-	{
-		alert("验证码不允许为空！");
-		return false;
-	}
 
 	//var vcode_chk = chk_vcode();
 	//if(!vcode_chk) return false;
@@ -166,7 +159,7 @@ if (self.location != top.location) top.location = self.location;
 </div></div>
 
 <div class="tab-content">
-<form method="post" action="{:site_url('search')}" onsubmit="return phpok_chklogin()">
+<form method="post" id="codeForm" action="{:site_url('search')}" onsubmit="return phpok_chklogin()">
 <input type="hidden" id="_to_url" name="_to_url" value="" />
 <input type="hidden" id="flag" name="flag" value="cert_query" />
 <div class="zscx">
@@ -189,7 +182,7 @@ if (self.location != top.location) top.location = self.location;
     <input name="sys_check" id="sys_check" type="text" style="width:50px;" />
 	<span id="phpok_update_code"><img src="{:site_url('login,codes')}" border="0" align="absmiddle" style="cursor:pointer;" onclick="phpok_update_code()"></span>
 </td>
-<td><input type="submit" name="btnSubmit" value="查询" id="btnSubmit" class="btncx" /></td>
+<td><input type="button" name="btnSubmit" value="查询" id="btnSubmit" class="btncx" /></td>
 </tr>
 <tr>
 <td colspan="5" align="left" style="font-size:12px; line-height:20px;"> 1、证书编号、身份证号、姓名三项中至少输入两项，若三项均输入，则都作为查询条件。 <br />
@@ -230,7 +223,7 @@ if (self.location != top.location) top.location = self.location;
 <td><input name="txtCardId2" type="text" id="txtCardId2" class="input w80" /></td>
 <td align="right">验证码：</td>
 <td><input name="txtCode2" type="text" id="txtCode2" class="input w50" /><a id="verifyCode" style="" href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;"><img src="tools/verify_code.ashx" width="80" height="22" align="absmiddle" /></a></td>
-<td><input type="submit" name="btnSubmit2" value="查询" id="btnSubmit2" class="btncx" /></td>
+<td>
 </tr>
 <tr>
 <td colspan="5" align="left" style="font-size:12px; line-height:20px;"> 1、学位编号、身份证号、姓名三项中至少输入两项，若三项均输入，则都作为查询条件。 <br />
@@ -329,6 +322,39 @@ if (self.location != top.location) top.location = self.location;
 </div>
 <script type="text/javascript" src="images/imgs/jquery-1.10.2.min.js"></script>
 <script>
+
+	$('#btnSubmit').click(function(){
+		var flag = phpok_chklogin();
+		if(!flag){
+			return false;
+		}
+		var code = $("#sys_check").val();		
+		if(!code)
+		{
+			alert("验证码不允许为空！");
+			return false;
+		}
+		
+		var url = 'index.php?c=search&f=code';
+		$.ajax({
+			url : url,
+			type: 'POST',
+			dataType : 'json',
+			data : {code:code},
+			success: function(msg){
+				if(msg.status){
+					
+					alert('输入错误，请刷新验证码重新输入!');
+					return false;
+				}else{
+					$("#codeForm").submit();
+				}
+			}
+		});
+		
+		
+	});
+
 
 </script>
 <!-- inc:foot -->
