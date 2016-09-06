@@ -76,7 +76,7 @@ class cert_m extends Model
         }
 
         if ($result != false) {
-            $sex = [0 => '女', 1 => '男'];
+            $sex = [2 => '女', 1 => '男'];
             foreach ($result as $key => $value) {
                 if ('sex' == $value['field']) {
                     $data[$value['field']] = $sex[$value['val']];
