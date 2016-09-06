@@ -72,7 +72,27 @@
 <div class="main">
 <div class="left">
 <div class="xueji_current">当前位置：<a href="index.php">首页</a> >> <a href="index.php?c=msg&id=211&">毕业证书查询</a> >> 查询结果</div>
-<div class="content-tab-wrap"><div id="floatHead" class="content-tab"><div class="content-tab-ul-wrap"><ul><li><a href="javascript:;" onclick="tabs(this);" class="selected">{:$certdata[level]} - {:$certdata[univers]}</a></li></ul></div></div></div><div class="tab-content">
+
+<!-- if($flag=='true') -->
+<div class="content-tab-wrap"><div id="floatHead" class="content-tab222">
+<div class="content-tab-ul-wrap">
+<ul><li><a href="javascript:;" onclick="tabs(this);" class="selected"></a></li></ul></div></div></div><div class="tab-content">
+<table width="100%" border="0" cellspacing="1" cellpadding="10">
+<tr><td>
+<div class="cx_result" style="margin-top:-22px;"><h2>提示信息</h2><div class="result">对不起！根据您提供的以下信息没有找到相关的毕业证书信息。</div>
+<div class='cx_item'>身份证号：为{:$idcard}</div><div class='cx_item'>姓名：{:$fullname}</div>
+<div class='cx_msg'>请确认您提供的信息是否正确。</div><div class="jixucha"><a href="index.php?c=msg&id=211&" class="btn_blue">继续查询</a></div></div>
+</div>
+
+</td></tr>
+</table>
+
+
+
+<!-- else -->
+<div class="content-tab-wrap"><div id="floatHead" class="content-tab">
+<div class="content-tab-ul-wrap">
+<ul><li><a href="javascript:;" onclick="tabs(this);" class="selected">{:$certdata[level]} - {:$certdata[univers]}</a></li></ul></div></div></div><div class="tab-content">
 <table width="100%" border="0" cellspacing="1" cellpadding="10" style="background:#CCC">
 <tr><td width="70" align="right" bgcolor="#f9f9f9">姓名：</td><td bgcolor="#FFFFFF">{:$certdata[fullname]}</td><td align="right" bgcolor="#f9f9f9">性别：</td><td width="162" bgcolor="#FFFFFF">{:$certdata[sex]}</td><td width="113" rowspan="10" align="center" valign="top" bgcolor="#FFFFFF"><img src='{:$certdata[image]}' width='90' height='120' /></td></tr>
 <tr><td align="right" bgcolor="#f9f9f9">出生日期：</td><td width="181" bgcolor="#FFFFFF">{:$certdata[birthday]}</td><td width="88" align="right" bgcolor="#F9f9f9">身份证号：</td><td width="162" bgcolor="#FFFFFF">{:$certdata[idcard]}</td></tr>
@@ -82,8 +102,11 @@
 <tr><td align="right" bgcolor="#f9f9f9">专业名称：</td><td bgcolor="#FFFFFF">{:$certdata[major]}</td><td align="right" bgcolor="#F9f9f9">学习形式：</td><td bgcolor="#FFFFFF">{:$certdata[stutype]}</td></tr><tr><td align="right" bgcolor="#f9f9f9">证书编号：</td><td bgcolor="#FFFFFF">{:$certdata[certnum]}</td><td align="right" bgcolor="#F9f9f9">毕结业结论：</td><td bgcolor="#FFFFFF">{:$certdata[result]}</td></tr>
 <tr><td align="center" bgcolor="#f9f9f9">二<br />维<br />码<br />校<br />验</td><td colspan="3" bgcolor="#FFFFFF"><img src="images/erweima.gif" width="125" height="125" /></td>
 </tr></table>
+
+
 </div>
-<div class="dayin"><ul><li><a href="#" onclick="window.print();">打印证书信息</a></li><li><a href="#" onclick="alert('您还没有开通此项服务！')">将此证书信息发送至邮箱</a></li></ul><div class="clear"></div><div class="shuoming">说明：查询到的证书信息可以选择打印或者发送到指定邮箱备份，本人查询功能学员本人可以凭注册邮箱和密码免费查询自己的学籍信息、证书信息、档案信息及证书认证信息，信息中用*号代表的，表示当前尚无该项信息，如信息有误，请联系毕业院校学籍证书管理部门。</div></div>
+<div class="dayin"><ul><li><a href="#" onclick="window.print();">打印证书信息</a></li><li><a href="#" onclick="alert('您还没有开通此项服务！')">将此证书信息发送至邮箱</a></li></ul><div class="clear"></div><div class="shuoming">说明：查询到的证书信息可以选择打印或者发送到指定邮箱备份，本人查询功能学员本人可以凭注册邮箱和密码免费查询自己的学籍信息、证书信息、档案信息及证书认证信息，信息中用*号代表的，表示当前尚无该项信息，如信息有误，请联系毕业院校学籍证书管理部门。</div><!-- end --></div>
+
 </div>
 
 <div class="right">

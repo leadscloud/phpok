@@ -145,6 +145,11 @@ class search_c extends Control
         if (isset($flag) && 'cert_query' == $flag) {
 						
 			$certdata = $this->cert_m->get_one($query['idcard'], $query['fullname'], $query['certnum']);
+			if(!isset($certdata['fullname'])){
+				 $this->tpl->assign("flag", 'true');    
+				 $this->tpl->assign("idcard", $query['idcard']);    
+				 $this->tpl->assign("fullname", $query['fullname']);    
+			}
             $this->tpl->assign("certdata", $certdata);       
             //$this->tpl->assign("fullname", $certdata['fullname']);            
             $chk_tplfile = ROOT.$this->tpl->tpldir."/msg_cert_detail.".$this->tpl->ext;
