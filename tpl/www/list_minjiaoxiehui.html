@@ -1,0 +1,52 @@
+<!-- inc:head_jiaoyulingdao -->
+
+<div class="main">
+<div class="left">
+<div class="weizhi"><span>民教协会</span>您的位置：<a href="default.aspx">首页</a> >> 民教协会</div>
+<div class="news_list">
+<!--
+<div class="tw">
+      <div class="tw_pic">
+        <a href='show.aspx?id=149' target='_blank' title='中国民办教育协会领导'><img src='/upload/201402/19/201402191827256718.jpg' width='300' height='200' /></a>
+        </div>
+        <div class="tw_font">
+          <h2><a href='show.aspx?id=149' target='_blank' title='中国民办教育协会领导'>中国民办教育协会领导</a></h2><p class='descript'>　　中国民办教育协会领导名誉会长1. 许嘉璐  中国民主促进会中央委员会原主席；第九届、十届全国人大…… <a href='show.aspx?id=149' target='_blank'>查看详情</a></p>
+      <ul>
+      <li><a href='show.aspx?id=149' title="中国民办教育协会领导" target='_blank'>中国民办教育协会领导</a></li>
+      </ul>
+        </div>
+        <div class="clear"></div>
+</div>
+-->
+<ul class="fas_ul">
+<!-- $rslist AS $key=>$value -->
+
+<li>
+<a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>
+<!-- if($value[id]) -->
+<!-- run:$rs = phpok("list","id=".$value[id]) -->
+<!-- if($rs[newpic]) -->
+<!-- $rs[newpic] AS $key2=>$value2 -->
+<img src='{:$value2[gd][big]}' />
+<!-- end -->	
+<!-- end -->	
+<!-- end -->
+</a>
+<p class="yh"><a href="{:msg_url($value)}" target="_blank" title="{:$value[title]}">{:$value[title]}</a></p>
+<span>{:$value[note]} …… 
+<a href="{:msg_url($value)}" target="_blank" title="{:$value[title]}">查看详情</a></span>
+</li>
+<!-- end -->
+
+</ul>
+                <div class="page">
+                   
+                </div>
+              
+            </div>
+</div>
+
+
+<!-- inc:inc/left_jiaoyulingdao -->
+
+<!-- inc:foot -->
