@@ -5,16 +5,24 @@
 <div class="listcontent">
 <h1>刘延东同志简历</h1>
 <div class="info">来源：新闻中心　编辑：通讯员　时间：{:date("Y-m-d H:i:s",$rs[post_date])}　点击数：{:$rs[hits]}</div>
-<div style="background: none repeat scroll 0 0 #F8FCFD;border: 1px solid #DCDDDD;font-size: 14px;line-height: 23px;margin: 15px 0 0;padding: 12px 5px 6px;text-align: justify;text-indent: 2em;"><b style="font-size:14px; font-family:'华文仿宋'">内容导读：</b><font style="font-size:14px; font-family:'华文仿宋'">中共中央政治局委员，副总理。</font></div>
+
 <div class="content">
 <!-- if($rs[content]) -->{:$rs[content]}<!-- end -->
 </div>
 <div class="clear"></div>
 <div class="article_page">
+<!-- run:$np_list = phpok_next_prev($rs[id],$rs[cate_id]) -->
+<!-- if($np_list) -->
 <ul>
-<li><span>上一篇：暂时没有上一条信息！</span></li>
-<li class="next"><span>下一篇：<a href='show.aspx?id=56'>陈宝生同志简历</a></span></li>
+<!-- $np_list[prev] AS $key=>$value -->
+<li><span>上一篇：<a href="{:msg_url($value)}" title="{:$value[title]}">{:$value[title]}</a></span></li>
+<!-- end -->
+<!-- $np_list[next] AS $key=>$value -->
+<li class="next"><span>下一篇：<a href="{:msg_url($value)}" title="{:$value[title]}">{:$value[title]}</a></span></li>
+<!-- end -->
 </ul>
+<!-- end -->
+<!-- run:unset($np_list) -->
 </div>
 <div class="clear"></div>
 <div class="article_about">
