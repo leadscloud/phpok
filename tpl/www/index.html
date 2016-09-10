@@ -84,17 +84,46 @@
 </ul>
 <div class="clear"></div>
 <div class="newslist" id="zx_cont1">
-<h3><a href='show.aspx?id=4974' target='_blank' title='官网新闻中心发布教育部2016年工作要点'>官网新闻中心发布教育部2016年工作要点</a></h3><p class='descript'>导读：2016年教育工作的总体要求是：全面贯彻党的十八大和十八届三中、四中、五中全会精神…… <a href='show.aspx?id=4974' target='_blank'>查看详情</a></p>
+<!-- run:$products = phpok("minjiaodongtai") -->
+<!-- if($products[rslist]) -->
+<!-- $products[rslist] AS $key=>$value -->
+<!-- if($key<1)  -->
+<h3><a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>{:$value[title]}</a></h3><p class='descript'>{:$value[note]}…… <a href='{:msg_url($value)}' target='_blank'>查看详情</a></p>
+<!-- end -->
+<!-- end -->
+
 <ul class="txtul" style="margin-top:5px;">
-<li><a href='show.aspx?id=5741' title="北投集团干部学院二期学员来到科德学院考察交流" target='_blank'>北投集团干部学院二期学员来到科德学院考察交流</a></li><li><a href='show.aspx?id=5740' title="西安思源学院印发《2016级新生入学教育实施方案》" target='_blank'>西安思源学院印发《2016级新生入学教育实施方案》</a></li><li><a href='show.aspx?id=5733' title="西安欧亚学院教师参加渭南市申报“中国陕菜之都”专家评审会" target='_blank'>西安欧亚学院教师参加渭南市申报“中国陕菜之都”专家评审会</a></li><li><a href='show.aspx?id=5732' title="陕西国际商贸学院董事长赵超一行赴沣西新城参加大众创业万众创新工作座谈会" target='_blank'>陕西国际商贸学院董事长赵超一行赴沣西新城参加大众创业万众创新工作座谈会</a></li><li><a href='show.aspx?id=5725' title="上海理工大学中英国际学院James Abbott博士受邀在中科院作学术报告" target='_blank'>上海理工大学中英国际学院James Abbott博士受邀在中科院作学术报告</a></li><li><a href='show.aspx?id=5724' title="西安思源学院召开辅导员大会" target='_blank'>西安思源学院召开辅导员大会</a></li>
+
+<!-- $products[rslist] AS $key=>$value -->
+<!-- if($key>0)  -->
+<li><a href='{:msg_url($value)}' title="{:$value[title]}" target='_blank'>{:$value[title]}</a></li>
+<!-- end -->
+<!-- end -->
 </ul>
+
+<!-- end -->
+<!-- run:unset($products) -->
 </div>
 
 <div class="newslist guangli" id="zx_cont2"  style="display:none">
-<h3><a href='show.aspx?id=2841' target='_blank' title='中国民办高等教育学生信息网严正声明'>中国民办高等教育学生信息网严正声明</a></h3><p class='descript'>（导读）中国民办高等教育学生信息网（官网）官方域名是：http://www.chsi.ac.cn                …… <a href='show.aspx?id=2841' target='_blank'>查看详情</a></p>
+<!-- run:$products = phpok("weiquanbaodao") -->
+<!-- if($products[rslist]) -->
+<!-- $products[rslist] AS $key=>$value -->
+<!-- if($key<1)  -->
+<h3><a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>{:$value[title]}</a></h3><p class='descript'>{:$value[note]}…… <a href='{:msg_url($value)}' target='_blank'>查看详情</a></p>
+<!-- end -->
+<!-- end -->
+
 <ul class="txtul" style="margin-top:5px;">
-<li><a href='show.aspx?id=2841' title="中国民办高等教育学生信息网严正声明" target='_blank'>中国民办高等教育学生信息网严正声明</a></li><li><a href='show.aspx?id=5645' title="陕西查处特岗教师考试试题雷同责任单位责任人" target='_blank'>陕西查处特岗教师考试试题雷同责任单位责任人</a></li><li><a href='show.aspx?id=5644' title="新疆取消33名高考违规考生单科或全科成绩" target='_blank'>新疆取消33名高考违规考生单科或全科成绩</a></li><li><a href='show.aspx?id=5425' title="长沙6所民办学校不合格" target='_blank'>长沙6所民办学校不合格</a></li><li><a href='show.aspx?id=5424' title="江西通报7所乱收费学校" target='_blank'>江西通报7所乱收费学校</a></li><li><a href='show.aspx?id=5330' title="重庆通报14所中小学违规收费" target='_blank'>重庆通报14所中小学违规收费</a></li>
+<!-- $products[rslist] AS $key=>$value -->
+<!-- if($key>0)  -->
+<li><a href='{:msg_url($value)}' title="{:$value[title]}" target='_blank'>{:$value[title]}</a></li>
+<!-- end -->
+<!-- end -->
 </ul>
+
+<!-- end -->
+<!-- run:unset($products) -->
 </div>
 
 </div>
