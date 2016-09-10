@@ -61,19 +61,13 @@
 <div class="focus">
 <div class="pic guangli" id="focus">
 <div  style="visibility:hidden;">
-
-<a href="show.aspx?id=341" target="_blank"><img src="images/p1.jpg" alt="第十二届全国人民代表大会第二次会议在人民大会堂开幕" width="350" height="240" /></a>
-
-<a href="show.aspx?id=4974" target="_blank"><img src="images/222.png" alt="官网新闻中心发布教育部2016年工作要点" width="350" height="240" /></a>
-
-<a href="show.aspx?id=2345" target="_blank"><img src="images/p3.jpg" alt="中央关于全面推进依法治国若干重大问题的决定（一）" width="350" height="240" /></a>
-
-<a href="show.aspx?id=261" target="_blank"><img src="images/444.jpg" alt="公安部部署开展集中清理网上制贩假证违法信息专项行动" width="350" height="240" /></a>
-
-<a href="show.aspx?id=63" target="_blank"><img src="images/p5.jpg" alt="丰富多彩的大学生活--呼和浩特职业学院生物化学工程学院" width="350" height="240" /></a>
-
-<a href="show.aspx?id=59" target="_blank"><img src="images/p6.jpg" alt="中国民办高校第一次参展就获得丰硕成果" width="350" height="240" /></a>
-
+<!-- run:$hotpic = phpok("picplayer") -->
+<!-- if($hotpic[rslist]) -->
+<!-- $hotpic[rslist] AS $key=>$value -->
+<a href="{:$value[link_url]}" target="_blank"><img src="{:$value[picture]}" alt="{:$value[title]}" width="350" height="240" /></a>
+<!-- end -->
+<!-- end -->
+<!-- run:unset($hotpic) -->
 </div>
 </div>
 <div class="jigou">
