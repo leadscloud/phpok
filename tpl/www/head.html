@@ -59,10 +59,18 @@
 </div>
 </div>
 <div class="nav">
-<div class="nav1 guangli">
-<a href="/default.aspx">网站首页</a><a href="/plist.aspx?id=34">教育领导</a><a href="/list.aspx?id=49">民教协会</a><a href="/news.aspx">新闻中心</a><a href="/list.aspx?id=31">通知公告</a><a href="/list.aspx?id=38">教育法规</a><a href="/list.aspx?id=36">人事任免</a><a href="/plist.aspx?id=37">专家顾问</a><a href="/list.aspx?id=39">教育研究</a><a href="/list.aspx?id=7">政策解读</a><a href="/nianjian.aspx">院校年检</a></div>
-<div class="nav1"><a class="guangli" href="/list.aspx?id=48">大学生活</a><a class="guangli" href="/cxxj.aspx">学籍查询</a><a class="guangli" href="/member/dangan.aspx">图像校对</a><a href="index.php?c=msg&id=211&">证书查询</a><a class="guangli" href="/cxda.aspx">档案管理</a><a class="guangli" href="/zsrz.aspx">证书认证</a><a class="guangli" href="/reg.aspx">实名注册</a><a class="guangli" href="/member/dangan.aspx">本人查询</a><a  class="guangli" href="/list.aspx?id=41">办学指南</a><a class="guangli" href="/about.aspx">服务平台</a><a class="guangli" href="/list.aspx?id=52">教育黄页</a></div>
-<div class="nav1 guangli"><a href="/news.aspx?id=15">国际合作</a><a href="/list.aspx?id=42">招生考试</a><a href="/news.aspx?id=22">院校风采</a><a href="/list.aspx?id=43">学生就业</a><a href="/list.aspx?id=44">专家答疑</a><a href="/list.aspx?id=50">资源中心</a><a href="/baoming.aspx">在线报名</a><a href="/addschool.aspx">院校加入</a><a href="/hezuo.aspx">合作申请</a><a href="/about.aspx?id=32">客服中心</a><a href="/admin/login.aspx" target="_blank">网上办公</a></div>
+
+<!-- run:$menulist = phpok_menu($id,$cid,$mid) -->
+
+<div class="nav1">
+<!-- $menulist AS $key=>$value -->
+<a href="{:$value[link]}">{:$value[title]}</a>
+<!-- end -->
+</div>
+
+<!-- run:unset($menulist) -->
+
+
 </div>
 </div>
 
