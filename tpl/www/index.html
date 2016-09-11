@@ -137,21 +137,43 @@
                             	<a href="list.aspx?id=13" class="d_n" id=hotnew1 onmouseover="tab('hotnew',1,2,1,'d_n','')">教育时评</a>
                                 <a href="list.aspx?id=31" id=hotnew2 onmouseover="tab('hotnew',2,2,2,'d_n','')">通知公告</a>
                             </h2>
+							
+							<!-- run:$products = phpok("jiaoyushiping") -->
+							<!-- if($products[rslist]) -->
                             <div class="l_box" id="hotnew_cont1">
+								<!-- $products[rslist] AS $key=>$value -->
+								<!-- if($key<1)  -->
                             	<div class="m_pic">
-                                   <a href='show.aspx?id=37' target='_blank' title='汉字为什么有危机'><img src='images/jysp.jpg' /></a><p class='tit'><a href='show.aspx?id=37' target='_blank' title='汉字为什么有危机'>汉字为什么有危机</a></p><p class='cont'>　　《汉字英雄》、《中国汉字听写大会》等节目的热播，暴露出了当下人们使用汉字的一些尴尬，</p>
+                                   <a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>
+									<!-- if($value[id]) -->
+									<!-- run:$rs = phpok("list","id=".$value[id]) -->
+									<!-- if($rs[newpic]) -->
+									<!-- $rs[newpic] AS $key2=>$value2 -->
+								   <img src='{:$value2[gd][big]}' />
+								    <!-- end -->	
+									<!-- end -->	
+									<!-- end -->
+								   </a>
+								   <p class='tit'><a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>{:$value[title]}</a></p><p class='cont'> {:$value[note]} </p>
                                 </div>
-                                <!---end m_pic-->
+                               <!-- end -->
+							   <!-- end -->
                                 <ul class="txtul">
-                                    <li><a href='show.aspx?id=5743' title="建设中国特色开放大学 构建国家终身学习体系">建设中国特色开放大学 构建国家终身学习体系</a></li><li><a href='show.aspx?id=5742' title="出实招就能见实效">出实招就能见实效</a></li><li><a href='show.aspx?id=5735' title="坚持“两个服务”推动教育发展">坚持“两个服务”推动教育发展</a></li><li><a href='show.aspx?id=5734' title="全面实施素质教育">全面实施素质教育</a></li><li><a href='show.aspx?id=5727' title="捍卫主权牢记历史理性爱国">捍卫主权牢记历史理性爱国</a></li>
-                                </ul>
+									<!-- $products[rslist] AS $key=>$value -->
+									<!-- if($key>0)  -->
+                                    <li><a href='{:msg_url($value)}' title="{:$value[title]}">{:$value[title]}</a></li>									
+									<!-- end -->
+									<!-- end -->
+							   </ul>
                             </div>
-                            <!--end l_box-->
+							<!-- end -->
+							<!-- run:unset($products) -->
+                           
                             <div class="l_box" id="hotnew_cont2" style="display:none;">
                             	<div class="m_pic">
                                    <a href='show.aspx?id=55' target='_blank' title='教育部办公厅关于开展语言文字规范标准培训工作的通知'><img src='images/tzgg.jpg' /></a><p class='tit'><a href='show.aspx?id=55' target='_blank' title='教育部办公厅关于开展语言文字规范标准培训工作的通知'>教育部办公厅关于开展语言文字规范标准培训工作的通知</a></p><p class='cont'>　　语言文字规范化标准化工作是语言文字工作的基础，语言文字规范标准是语言文字方针政策的集中体现，即将发布的《国家中长…</p>
                                 </div>
-                                <!---end m_pic-->
+                                
                                 <ul class="txtul">
                                    <li><a href='show.aspx?id=5611' title="教育部关于印发《教育信息化“十三五”规划》的通知">教育部关于印发《教育信息化“十三五”规划》的通知</a></li><li><a href='show.aspx?id=5610' title="国务院食品安全办等6部门关于进一步加强学校校园及周边食品安全工作的意见">国务院食品安全办等6部门关于进一步加强学校校园及周边食品安全工作的意见</a></li><li><a href='show.aspx?id=5551' title="教育部关于切实做好中小学节粮教育和管理工作的通知">教育部关于切实做好中小学节粮教育和管理工作的通知</a></li><li><a href='show.aspx?id=5550' title="教育部办公厅关于报送加强和改进高校思想政治建设有关经验材料的通知">教育部办公厅关于报送加强和改进高校思想政治建设有关经验材料的通知</a></li><li><a href='show.aspx?id=5506' title="教育部办公厅关于进一步做好高校毕业生就业创业工作的通知">教育部办公厅关于进一步做好高校毕业生就业创业工作的通知</a></li>
                                 </ul>
