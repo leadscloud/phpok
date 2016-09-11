@@ -59,7 +59,7 @@
 <div class="main">
 <div class="left-index">
 <div class="focus">
-<div class="pic guangli" id="focus">
+<div class="pic" id="focus">
 <div  style="visibility:hidden;">
 <!-- run:$hotpic = phpok("picplayer") -->
 <!-- if($hotpic[rslist]) -->
@@ -77,7 +77,7 @@
 </ul>
 </div>
 </div>
-<div class="news guangli">
+<div class="news">
 <ul class="tab">
 <li class="current"  id=zx1 onmouseover="tab('zx',1,2,1,'current','')"><a href="list.aspx?id=6" target=_blank>民教动态</a></li>
 <li  id=zx2 onmouseover="tab('zx',2,2,2,'current','')"><a href="list.aspx?id=3"  target="_blank">维权报道</a></li>
@@ -105,7 +105,7 @@
 <!-- run:unset($products) -->
 </div>
 
-<div class="newslist guangli" id="zx_cont2"  style="display:none">
+<div class="newslist" id="zx_cont2"  style="display:none">
 <!-- run:$products = phpok("weiquanbaodao") -->
 <!-- if($products[rslist]) -->
 <!-- $products[rslist] AS $key=>$value -->
@@ -129,10 +129,10 @@
 </div>
 <div class="clear"></div>
 
-<div class="index-ad guangli"><a href="http://www.chsi.ac.cn" target="_blank"><img src="images/adp.jpg" width="760" height="80" /></a></div>
+<div class="index-ad"><a href="http://www.chsi.ac.cn" target="_blank"><img src="images/adp.jpg" width="760" height="80" /></a></div>
 
 <div class="mid_left lft">
-<div class="m_lft guangli" style="margin-right:10px;">
+<div class="m_lft" style="margin-right:10px;">
                         	<h2>
                             	<a href="list.aspx?id=13" class="d_n" id=hotnew1 onmouseover="tab('hotnew',1,2,1,'d_n','')">教育时评</a>
                                 <a href="list.aspx?id=31" id=hotnew2 onmouseover="tab('hotnew',2,2,2,'d_n','')">通知公告</a>
@@ -203,7 +203,7 @@
 							<!-- run:unset($products) -->
                         </div>
                         
-                        <div class="m_lft guangli">
+                        <div class="m_lft">
                         	<h2>
                             	<a href="list.aspx?id=48" class="d_n" id=hotne1 onmouseover="tab('hotne',1,2,1,'d_n','')">大学生活</a>
                                 <a href="list.aspx?id=38" id=hotne2 onmouseover="tab('hotne',2,2,2,'d_n','')">教育法规</a>
@@ -275,7 +275,7 @@
 							<!-- run:unset($products) -->
                         </div>
                       
-<div class="m_lft guangli" style="margin-right:10px;">
+<div class="m_lft" style="margin-right:10px;">
                         	<h2>
                             	<a href="list.aspx?id=4" class="d_n" id=hotn1 onmouseover="tab('hotn',1,2,1,'d_n','')">媒体关注</a>
                                 <a href="list.aspx?id=47" id=hotn2 onmouseover="tab('hotn',2,2,2,'d_n','')">要闻博览</a>
@@ -347,7 +347,7 @@
 							<!-- run:unset($products) -->
                         </div>
                         
-                        <div class="m_lft guangli">
+                        <div class="m_lft">
                         	<h2>
                             	<a href="list.aspx?id=43" class="d_n" id=hot1 onmouseover="tab('hot',1,2,1,'d_n','')">学生就业</a>
                                 <a href="list.aspx?id=42" id=hot2 onmouseover="tab('hot',2,2,2,'d_n','')">招生考试</a></h2>
@@ -419,7 +419,7 @@
 </div>
 <div class="clear"></div>
 
-<div class="zhuanjia guangli">
+<div class="zhuanjia">
 <div class="zhuanjiaitem"><a href="plist.aspx?id=37" target="_blank"><img src="images/item_1.jpg" /></a></div>
 <div class="zhuanjialist" id="QQMarquee2" style="width:670px;">
 <ul class="picul" id="QQMarqueeCoutent2">
@@ -437,29 +437,38 @@
 </div>
 <div class="right-index">
 <div class="gonggao">
-<div class="item guangli"><span><a href="plist.aspx?id=34">更多</a></span><strong>教育领导</strong></div>
+<div class="item"><span><a href="plist.aspx?id=34">更多</a></span><strong>教育领导</strong></div>
 <div class="gonggaolist">
 <ul class="lingdao">
-
-<li class="guangli">
-<a href="show.aspx?id=6"><img src="images/jyld1.jpg" /></a>
-<p class="name">刘延东同志简历</p>
+<!-- run:$products = phpok("jiaoyulingdao") -->
+<!-- if($products[rslist]) -->
+  <!-- $products[rslist] AS $key=>$value -->
+  <!-- if($key<2) -->
+<li class="">
+<a href="{:msg_url($value)}"><img src="{:$value[picture]}" /></a>
+<p class="name">{:$value[title]}</p>
 <p class="zhiwu">中共中央政治局委员，副总理。</p>
 </li>
-
-<li class="guangli">
-<a href="show.aspx?id=56"><img src="images/jyld2.jpg" /></a>
-<p class="name">陈宝生同志简历</p>
-<p class="zhiwu">教育部部长、党组书记。</p>
-</li>
+  <!-- end -->	
+  <!-- end -->	
+<!-- end -->
+<!-- run:unset($products) -->
 
 </ul>
 </div>
 
-<div class="item guangli"><span><a href="list.aspx?id=36">更多</a></span><strong>人事任免</strong></div>
+<div class="item"><span><a href="list.aspx?id=36">更多</a></span><strong>人事任免</strong></div>
 <div class="gonggaolist">
-<ul class="txtul guangli">
-<li><a href='show.aspx?id=1532' title="教育部关于游森任职的通知">教育部关于游森任职的通知</a></li><li><a href='show.aspx?id=1531' title="教育部关于袁小平任职的通知">教育部关于袁小平任职的通知</a></li><li><a href='show.aspx?id=1399' title="孙也刚、于志刚分别任中国海洋大学党委书记、校长">孙也刚、于志刚分别任中国海洋大学党委书记、校长</a></li><li><a href='show.aspx?id=1067' title="赵继任东北大学校长">赵继任东北大学校长</a></li>
+<ul class="txtul">
+<!-- run:$products = phpok("renshirenmian") -->
+<!-- if($products[rslist]) -->
+  <!-- $products[rslist] AS $key=>$value -->
+  <!-- if($key<4) -->
+<li><a href='{:msg_url($value)}' title="{:$value[title]}">{:$value[title]}</a></li>
+  <!-- end -->	
+  <!-- end -->	
+<!-- end -->
+<!-- run:unset($products) -->
 </ul>
 </div>
 
@@ -484,17 +493,33 @@
 <div class="zhengceitem"><strong>招生简章备案</strong><span><a href="list.aspx?id=45" target="_blank">更多</a></span></div>
 <div class="zhengcelist">
 <ul class="txtul">
-<li><a href='show.aspx?id=113' title="北京建设大学招生广告" target='_blank'>北京建设大学招生广告</a></li><li><a href='show.aspx?id=120' title="北京美国英语语言学院招生简章与广告备案（2013-2014年）" target='_blank'>北京美国英语语言学院招生简章与广告备案（2013-2014年）</a></li><li><a href='show.aspx?id=119' title="北京美国英语语言学院招生广告（2013-2014年）" target='_blank'>北京美国英语语言学院招生广告（2013-2014年）</a></li><li><a href='show.aspx?id=118' title="中国教育国际交流研修学院招生简章与广告备案" target='_blank'>中国教育国际交流研修学院招生简章与广告备案</a></li><li><a href='show.aspx?id=117' title="北京瀚林职业研修学院招生简章与广告备案（2013-2014年）" target='_blank'>北京瀚林职业研修学院招生简章与广告备案（2013-2014年）</a></li><li><a href='show.aspx?id=116' title="北京金融学院招生简章与广告备案（2013-2014年）" target='_blank'>北京金融学院招生简章与广告备案（2013-2014年）</a></li><li><a href='show.aspx?id=115' title="北京黄埔大学招生简章与广告备案（2013-2014年）" target='_blank'>北京黄埔大学招生简章与广告备案（2013-2014年）</a></li><li><a href='show.aspx?id=114' title="北京高等秘书研修学院招生简章与广告备案（2013-2014年）" target='_blank'>北京高等秘书研修学院招生简章与广告备案（2013-2014年）</a></li><li><a href='show.aspx?id=112' title="北京涉外经济专修学院招生简章与广告备案（2013-2014年）" target='_blank'>北京涉外经济专修学院招生简章与广告备案（2013-2014年）</a></li><li><a href='show.aspx?id=111' title="北京计算机专修学院招生简章与广告备案（2013-2014年）" target='_blank'>北京计算机专修学院招生简章与广告备案（2013-2014年）</a></li>
+<!-- run:$products = phpok("zhaoshengbeian") -->
+<!-- if($products[rslist]) -->
+  <!-- $products[rslist] AS $key=>$value -->
+  <!-- if($key<10) -->
+<li><a href='{:msg_url($value)}' title="{:$value[title]}" target='_blank'>{:$value[title]}</a></li>
+ <!-- end -->	
+  <!-- end -->	
+<!-- end -->
+<!-- run:unset($products) -->
 </ul>
 </div>
 </div>
 
 
-<div class="zhengce guangli">
+<div class="zhengce">
 <div class="zhengceitem"><strong>专家答疑</strong><span><a href="list.aspx?id=44" target="_blank">更多</a></span></div>
 <div class="zhengcelist">
 <ul class="txtul">
-<li><a href='show.aspx?id=1212' title="2014高考应考锦囊：高考生考前三大注意事项" target='_blank'>2014高考应考锦囊：高考生考前三大注意事项</a></li><li><a href='show.aspx?id=1211' title="专家支招：数学高考切记“三注意” 表达须规范" target='_blank'>专家支招：数学高考切记“三注意” 表达须规范</a></li><li><a href='show.aspx?id=428' title="如何提炼办学理念" target='_blank'>如何提炼办学理念</a></li><li><a href='show.aspx?id=427' title="本科生该如何对待毕业论文和答辩" target='_blank'>本科生该如何对待毕业论文和答辩</a></li><li><a href='show.aspx?id=426' title="大学生应如何处理学习与实习的关系" target='_blank'>大学生应如何处理学习与实习的关系</a></li><li><a href='show.aspx?id=82' title="高考前如何做好孩子的心理调适工作" target='_blank'>高考前如何做好孩子的心理调适工作</a></li><li><a href='show.aspx?id=81' title="“不让孩子输在起跑线上”危害在哪里" target='_blank'>“不让孩子输在起跑线上”危害在哪里</a></li><li><a href='show.aspx?id=80' title="孩子是不是不能输在起跑线上" target='_blank'>孩子是不是不能输在起跑线上</a></li><li><a href='show.aspx?id=78' title="如何构建师德学习活动的长效机制" target='_blank'>如何构建师德学习活动的长效机制</a></li><li><a href='show.aspx?id=77' title="如何认识高考改革的复杂性" target='_blank'>如何认识高考改革的复杂性</a></li>
+<!-- run:$products = phpok("zhuanjiadayi") -->
+<!-- if($products[rslist]) -->
+  <!-- $products[rslist] AS $key=>$value -->
+  <!-- if($key<10) -->
+<li><a href='{:msg_url($value)}' title="{:$value[title]}" target='_blank'>{:$value[title]}</a></li>
+  <!-- end -->	
+  <!-- end -->	
+<!-- end -->
+<!-- run:unset($products) -->
 </ul>
 </div>
 </div>
