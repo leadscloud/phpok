@@ -202,31 +202,77 @@
                             <!-- end -->
 							<!-- run:unset($products) -->
                         </div>
-                        <!--end m_lft-->
+                        
                         <div class="m_lft guangli">
                         	<h2>
                             	<a href="list.aspx?id=48" class="d_n" id=hotne1 onmouseover="tab('hotne',1,2,1,'d_n','')">大学生活</a>
                                 <a href="list.aspx?id=38" id=hotne2 onmouseover="tab('hotne',2,2,2,'d_n','')">教育法规</a>
                             </h2>
-<div class="l_box" id="hotne_cont1">
+							
+							<!-- run:$products = phpok("daxueshenghuo") -->
+							<!-- if($products[rslist]) -->
+							<div class="l_box" id="hotne_cont1">
+								<!-- $products[rslist] AS $key=>$value -->
+								<!-- if($key<1)  -->
                             	<div class="m_pic">
-                                    <a href='show.aspx?id=63' target='_blank' title='丰富多彩的大学生活--呼和浩特职业学院生物化学工程学院'><img src='images/dxsh.jpg' /></a><p class='tit'><a href='show.aspx?id=63' target='_blank' title='丰富多彩的大学生活--呼和浩特职业学院生物化学工程学院'>丰富多彩的大学生活--呼和浩特职业学院生物化学工程学院</a></p><p class='cont'>　　2011年9月，张小平成为了呼和浩特职业学院生物化学工程学院食品生物技术专业大一的新生，开始了新的学习和生活。学校得…</p>
+                                     <a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>
+									  <!-- if($value[id]) -->
+									<!-- run:$rs = phpok("list","id=".$value[id]) -->
+									<!-- if($rs[newpic]) -->
+									<!-- $rs[newpic] AS $key2=>$value2 -->
+								   <img src='{:$value2[gd][big]}' />
+								     <!-- end -->	
+									<!-- end -->	
+									<!-- end -->
+									 </a>
+									 <p class='tit'><a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>{:$value[title]}</a></p><p class='cont'>{:$value[note]}</p>
                                 </div>
-                                <!---end m_pic-->
+								<!-- end -->
+							    <!-- end -->
+                                
                                 <ul class="txtul">
-                                     <li><a href='show.aspx?id=5379' title="话剧《一诺千金》专场演出于大连科技学院成功举行">话剧《一诺千金》专场演出于大连科技学院成功举行</a></li><li><a href='show.aspx?id=5378' title="西安汽车科技职业学院成功举办“2015年·奋斗的青春最美丽”表彰大会">西安汽车科技职业学院成功举办“2015年·奋斗的青春最美丽”表彰大会</a></li><li><a href='show.aspx?id=5298' title="西安城市建设职业学院第七届社团文化节隆重开幕">西安城市建设职业学院第七届社团文化节隆重开幕</a></li><li><a href='show.aspx?id=5297' title="西安海棠职业学院“学工杯”乒乓球/羽毛球比赛中取得佳绩">西安海棠职业学院“学工杯”乒乓球/羽毛球比赛中取得佳绩</a></li><li><a href='show.aspx?id=5021' title="西安培华学院在全国青少年才艺电视展演中获佳绩">西安培华学院在全国青少年才艺电视展演中获佳绩</a></li>
+                                     <!-- $products[rslist] AS $key=>$value -->
+									<!-- if($key>0 && $key<6)  -->
+                                    <li><a href='{:msg_url($value)}' title="{:$value[title]}">{:$value[title]}</a></li>									
+									<!-- end -->
+									<!-- end -->
                                 </ul>
                             </div>
-                            <!--end l_box-->
+							<!-- end -->
+							<!-- run:unset($products) -->
+							
+							
+                           <!-- run:$products = phpok("jiaoyufagui") -->
+							<!-- if($products[rslist]) -->
                             <div class="l_box" id="hotne_cont2" style="display:none">
+								<!-- $products[rslist] AS $key=>$value -->
+								<!-- if($key<1)  -->
                             	<div class="m_pic">
-                                    <a href='show.aspx?id=153' target='_blank' title='中华人民共和国教育法'><img src='images/jyfg.jpg' /></a><p class='tit'><a href='show.aspx?id=153' target='_blank' title='中华人民共和国教育法'>中华人民共和国教育法</a></p><p class='cont'>　　第一章 总则第一条 为了发展教育事业，提高全民族的素质，促进社会主义物质文明和精神文明建设，根据宪法，制定本法。 …</p>
+                                     <a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>
+									  <!-- if($value[id]) -->
+									<!-- run:$rs = phpok("list","id=".$value[id]) -->
+									<!-- if($rs[newpic]) -->
+									<!-- $rs[newpic] AS $key2=>$value2 -->
+								   <img src='{:$value2[gd][big]}' />
+								     <!-- end -->	
+									<!-- end -->	
+									<!-- end -->
+									 </a>
+									 <p class='tit'><a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>{:$value[title]}</a></p><p class='cont'>{:$value[note]}</p>
                                 </div>
-                                <!---end m_pic-->
+								<!-- end -->
+							    <!-- end -->
+                                
                                 <ul class="txtul">
-                                     <li><a href='show.aspx?id=5508' title="中华人民共和国高等教育法">中华人民共和国高等教育法</a></li><li><a href='show.aspx?id=5507' title="中华人民共和国教育法">中华人民共和国教育法</a></li><li><a href='show.aspx?id=3215' title="中华人民共和国学位条例">中华人民共和国学位条例</a></li><li><a href='show.aspx?id=3214' title="普通高等学校设置暂行条例">普通高等学校设置暂行条例</a></li><li><a href='show.aspx?id=3162' title="学位论文作假行为处理办法">学位论文作假行为处理办法</a></li>
+                                     <!-- $products[rslist] AS $key=>$value -->
+									<!-- if($key>0 && $key<6)  -->
+                                    <li><a href='{:msg_url($value)}' title="{:$value[title]}">{:$value[title]}</a></li>									
+									<!-- end -->
+									<!-- end -->
                                 </ul>
                             </div>
+							<!-- end -->
+							<!-- run:unset($products) -->
                         </div>
                         <!--end m_lft-->
 <div class="m_lft guangli" style="margin-right:10px;">
