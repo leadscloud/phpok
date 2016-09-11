@@ -343,8 +343,8 @@ if (self.location != top.location) top.location = self.location;
 			data : {code:code},
 			success: function(msg){
 				if(msg.status){
-                    phpok_update_code();
 					alert('输入错误，请重新输入!');
+                    phpok_update_code();
 					return false;
 				}else{
 					$("#codeForm").submit();
