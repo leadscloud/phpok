@@ -51,7 +51,7 @@ class msg_c extends Control
 		$popedom = sys_user_popedom("read");//获取阅读权限
 		if($rs["cate_id"])
 		{
-			if(!$popedom || !$popedom["category"] || ($popedom != "all" && !in_array($rs["cate_id"],$popedom["category"])))
+			if(!$popedom || !empty($popedom["category"]) || ($popedom != "all" && !in_array($rs["cate_id"],$popedom["category"])))
 			{
 				error($this->lang["not_popedom"],site_url("usercp"));
 			}
