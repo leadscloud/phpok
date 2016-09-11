@@ -415,7 +415,7 @@
                             <!-- end -->
 							<!-- run:unset($products) -->
                         </div>
-                        <!--end m_lft-->
+                       
 </div>
 <div class="clear"></div>
 
@@ -423,14 +423,13 @@
 <div class="zhuanjiaitem"><a href="plist.aspx?id=37" target="_blank"><img src="images/item_1.jpg" /></a></div>
 <div class="zhuanjialist" id="QQMarquee2" style="width:670px;">
 <ul class="picul" id="QQMarqueeCoutent2">
-<li><a href='show.aspx?id=142' title='刘林同志' target='_blank'><img src='images/zj8.jpg' /><span>刘林同志</span></a></li>
-<li><a href='show.aspx?id=139' title='顾明远同志' target='_blank'><img src='images/zj9.jpg' /><span>顾明远同志</span></a></li>
-<li><a href='show.aspx?id=138' title='许嘉璐同志' target='_blank'><img src='images/zj1.jpg' /><span>许嘉璐同志</span></a></li>
-<li><a href='show.aspx?id=137' title='廖 鸿同志' target='_blank'><img src='images/zj2.jpg' /><span>廖 鸿同志</span></a></li>
-<li><a href='show.aspx?id=136' title='胡大白同志' target='_blank'><img src='images/zj3.jpg' /><span>胡大白同志</span></a></li>
-<li><a href='show.aspx?id=135' title='周延波同志' target='_blank'><img src='images/zj5.jpg' /><span>周延波同志</span></a></li>
-<li><a href='show.aspx?id=134' title='曹勇安同志' target='_blank'><img src='images/zj6.jpg' /><span>曹勇安同志</span></a></li>
-<li><a href='show.aspx?id=123' title='陶西平同志' target='_blank'><img src='images/zj7.jpg' /><span>陶西平同志</span></a></li>
+<!-- run:$products = phpok("zhuanjiaguwen") -->
+<!-- if($products[rslist]) -->
+  <!-- $products[rslist] AS $key=>$value -->
+<li><a href='{:msg_url($value)}' title='{:$value[title]}' target='_blank'><img src='{:$value[picture]}' /><span>{:$value[title]}</span></a></li>
+  <!-- end -->	
+<!-- end -->
+<!-- run:unset($products) -->
 </ul>
 </div>
 </div>
