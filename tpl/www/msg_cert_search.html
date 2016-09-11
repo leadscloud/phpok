@@ -11,32 +11,6 @@ var base_func = "{:$sys_app->config->f}";
 var base_dir = "{:$sys_app->config->d}";
 var phpok_data = "";
 </script>
-<!--<script type="text/javascript" src="js/jquery.js"></script>-->
-<!-- if(function_exists("imagecreate") && defined("SYS_VCODE_USE") && SYS_VCODE_USE == true) -->
-<script type="text/javascript">
-function adm_login_vcode()
-{
-	var srcurl = "{:site_url('login,codes','','&')}";
-	var rand = Math.random();
-	srcurl += "rand="+rand;
-	$("#phpok_vcode").attr("src",srcurl);
-}
-function chk_vcode()
-{
-	var chk = $("#chk").val();
-	if(!chk)
-	{
-		alert("验证码不允许为空");
-		return false;
-	}
-	return true;
-}
-</script>
-<!-- else -->
-<script type="text/javascript">
-function chk_vcode(){return true}
-</script>
-<!-- end -->
 <script type="text/javascript">
 function phpok_chklogin()
 {
@@ -66,8 +40,6 @@ function phpok_chklogin()
         return false;
     }
 
-	//var vcode_chk = chk_vcode();
-	//if(!vcode_chk) return false;
 	return true;
 }
 if (self.location != top.location) top.location = self.location;
@@ -159,7 +131,7 @@ if (self.location != top.location) top.location = self.location;
 </div></div>
 
 <div class="tab-content">
-<form method="post" id="codeForm" action="{:site_url('search')}" onsubmit="return phpok_chklogin()">
+<form method="post" id="codeForm" action="{:site_url('search')}">
 <input type="hidden" id="_to_url" name="_to_url" value="" />
 <input type="hidden" id="flag" name="flag" value="cert_query" />
 <div class="zscx">
@@ -179,7 +151,7 @@ if (self.location != top.location) top.location = self.location;
 <td><input name="txtCardId" type="text" id="txtCardId" class="input w80" /></td>
 <td align="right">验证码：</td>
 <td>
-    <input name="sys_check" id="sys_check" type="text" style="width:50px;" />
+    <input name="txtCode" id="txtCode" type="text" style="width:50px;" />
 	<span id="phpok_update_code"><img src="{:site_url('login,codes')}" border="0" align="absmiddle" style="cursor:pointer;" onclick="phpok_update_code()"></span>
 </td>
 <td><input type="button" name="btnSubmit" value="查询" id="btnSubmit" class="btncx" /></td>
@@ -309,18 +281,17 @@ if (self.location != top.location) top.location = self.location;
 </ul>
 </div>
 </div>
-    
-<div class="zhengce" style="margin-top:5px; display:none" id="qq">
-<div class="zhengceitem"><strong>全国免费客服</strong></div>
-<div class="zhengcelist guangli" style="line-height:25px; font-size:16px; font-weight:bold; color:#A1D6F3; padding-bottom:10px;">
-010-52725863 (信息中心)  <br />   010-52725865 (审核中心）   <br /><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes"><img border="0"  align="absmiddle" src="http://wpa.qq.com/pa?p=2::51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
-</div>
-</div>
+
+<!--<div class="zhengce" style="margin-top:5px; display:none" id="qq">-->
+    <!--<div class="zhengceitem"><strong>全国免费客服</strong></div>-->
+    <!--<div class="zhengcelist guangli" style="line-height:25px; font-size:16px; font-weight:bold; color:#A1D6F3; padding-bottom:10px;">-->
+        <!--010-52725863 (信息中心)  <br />   010-52725865 (审核中心）   <br /><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes"><img border="0"  align="absmiddle" src="http://wpa.qq.com/pa?p=2::51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>-->
+    <!--</div>-->
+<!--</div>-->
 
 </div>
 </div>
 </div>
-<script type="text/javascript" src="images/imgs/jquery-1.10.2.min.js"></script>
 <script>
 
 	$('#btnSubmit').click(function(){
@@ -328,12 +299,13 @@ if (self.location != top.location) top.location = self.location;
 		if(!flag){
 			return false;
 		}
-		var code = $("#sys_check").val();		
+		var code = $("#txtCode").val();		
 		if(!code)
 		{
 			alert("验证码不允许为空！");
 			return false;
 		}
+        console.log(code);
 		
 		var url = 'index.php?c=search&f=code';
 		$.ajax({
@@ -342,8 +314,9 @@ if (self.location != top.location) top.location = self.location;
 			dataType : 'json',
 			data : {code:code},
 			success: function(msg){
+                console.log(msg);
 				if(msg.status){
-					alert('输入错误，请重新输入!');
+					alert('输入错误或验证码已过时，请重新输入!');
                     phpok_update_code();
 					return false;
 				}else{
@@ -351,10 +324,6 @@ if (self.location != top.location) top.location = self.location;
 				}
 			}
 		});
-		
-		
 	});
-
-
 </script>
 <!-- inc:foot -->
