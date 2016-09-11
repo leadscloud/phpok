@@ -274,58 +274,146 @@
 							<!-- end -->
 							<!-- run:unset($products) -->
                         </div>
-                        <!--end m_lft-->
+                      
 <div class="m_lft guangli" style="margin-right:10px;">
                         	<h2>
                             	<a href="list.aspx?id=4" class="d_n" id=hotn1 onmouseover="tab('hotn',1,2,1,'d_n','')">媒体关注</a>
                                 <a href="list.aspx?id=47" id=hotn2 onmouseover="tab('hotn',2,2,2,'d_n','')">要闻博览</a>
                             </h2>
+							
+							<!-- run:$products = phpok("meitiguanzhu") -->
+							<!-- if($products[rslist]) -->
                             <div class="l_box" id="hotn_cont1">
+                            	<!-- $products[rslist] AS $key=>$value -->
+								<!-- if($key<1)  -->
                             	<div class="m_pic">
-                                <a href='show.aspx?id=339' target='_blank' title='聚焦海外媒体的“两会好声音”'><img src='images/mtgz.jpg' /></a><p class='tit'><a href='show.aspx?id=339' target='_blank' title='聚焦海外媒体的“两会好声音”'>聚焦海外媒体的“两会好声音”</a></p><p class='cont'>　　3月13日北京消息 十二届全国人大会二次会议13日上午在人民大会堂闭幕。此前一天，全国政协十二届二次会议也于当日上午闭…</p>
+                                     <a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>
+									  <!-- if($value[id]) -->
+									<!-- run:$rs = phpok("list","id=".$value[id]) -->
+									<!-- if($rs[newpic]) -->
+									<!-- $rs[newpic] AS $key2=>$value2 -->
+								   <img src='{:$value2[gd][big]}' />
+								     <!-- end -->	
+									<!-- end -->	
+									<!-- end -->
+									 </a>
+									 <p class='tit'><a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>{:$value[title]}</a></p><p class='cont'>{:$value[note]}</p>
                                 </div>
-                                <!---end m_pic-->
+								<!-- end -->
+							    <!-- end -->
+                                
                                 <ul class="txtul">
-                                    <li><a href='show.aspx?id=5745' title="浙江：高标准普及15年教育">浙江：高标准普及15年教育</a></li><li><a href='show.aspx?id=5744' title="四川德阳扎根城市产业办职教">四川德阳扎根城市产业办职教</a></li><li><a href='show.aspx?id=5737' title="甘肃省属高校专项计划招收5400名贫困地区学生">甘肃省属高校专项计划招收5400名贫困地区学生</a></li><li><a href='show.aspx?id=5736' title="北京教师暑期到新疆和田家访，">北京教师暑期到新疆和田家访，</a></li><li><a href='show.aspx?id=5729' title="哈尔滨13名优秀班主任主持工作室">哈尔滨13名优秀班主任主持工作室</a></li>
+                                     <!-- $products[rslist] AS $key=>$value -->
+									<!-- if($key>0 && $key<6)  -->
+                                    <li><a href='{:msg_url($value)}' title="{:$value[title]}">{:$value[title]}</a></li>									
+									<!-- end -->
+									<!-- end -->
                                 </ul>
                             </div>
-                            <!--end l_box-->
+							<!-- end -->
+							<!-- run:unset($products) -->
+							
+                            
+							<!-- run:$products = phpok("yaowenbolan") -->
+							<!-- if($products[rslist]) -->
                             <div class="l_box" id="hotn_cont2" style="display:none;">
+                            	<!-- $products[rslist] AS $key=>$value -->
+								<!-- if($key<1)  -->
                             	<div class="m_pic">
-                                    <a href='show.aspx?id=341' target='_blank' title='第十二届全国人民代表大会第二次会议在人民大会堂开幕'><img src='images/ywbl.jpg' /></a><p class='tit'><a href='show.aspx?id=341' target='_blank' title='第十二届全国人民代表大会第二次会议在人民大会堂开幕'>第十二届全国人民代表大会第二次会议在人民大会堂开幕</a></p><p class='cont'>　　3月5日上午9时，第十二届全国人民代表大会第二次会议在人民大会堂开幕，听取国务院总理李克强作政府工作报告，审查计划…</p>
+                                     <a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>
+									  <!-- if($value[id]) -->
+									<!-- run:$rs = phpok("list","id=".$value[id]) -->
+									<!-- if($rs[newpic]) -->
+									<!-- $rs[newpic] AS $key2=>$value2 -->
+								   <img src='{:$value2[gd][big]}' />
+								     <!-- end -->	
+									<!-- end -->	
+									<!-- end -->
+									 </a>
+									 <p class='tit'><a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>{:$value[title]}</a></p><p class='cont'>{:$value[note]}</p>
                                 </div>
-                                <!---end m_pic-->
+								<!-- end -->
+							    <!-- end -->
+                                
                                 <ul class="txtul">
-                                     <li><a href='show.aspx?id=341' title="第十二届全国人民代表大会第二次会议在人民大会堂开幕">第十二届全国人民代表大会第二次会议在人民大会堂开幕</a></li><li><a href='show.aspx?id=5747' title="《青少年法治教育大纲》提出要在中高考中适当增加法治知识内容">《青少年法治教育大纲》提出要在中高考中适当增加法治知识内容</a></li><li><a href='show.aspx?id=5746' title="《教育部关于中央部门所属高校深化教育教学改革的指导意见》印发">《教育部关于中央部门所属高校深化教育教学改革的指导意见》印发</a></li><li><a href='show.aspx?id=5739' title="长沙理工大学深入推进研究生课程改革">长沙理工大学深入推进研究生课程改革</a></li><li><a href='show.aspx?id=5738' title="北京大学探索“互联网+教育”育人模式">北京大学探索“互联网+教育”育人模式</a></li>
+                                     <!-- $products[rslist] AS $key=>$value -->
+									<!-- if($key>0 && $key<6)  -->
+                                    <li><a href='{:msg_url($value)}' title="{:$value[title]}">{:$value[title]}</a></li>									
+									<!-- end -->
+									<!-- end -->
                                 </ul>
                             </div>
-                            <!--end l_box-->
+                            <!-- end -->
+							<!-- run:unset($products) -->
                         </div>
-                        <!--end m_lft-->
+                        
                         <div class="m_lft guangli">
                         	<h2>
                             	<a href="list.aspx?id=43" class="d_n" id=hot1 onmouseover="tab('hot',1,2,1,'d_n','')">学生就业</a>
                                 <a href="list.aspx?id=42" id=hot2 onmouseover="tab('hot',2,2,2,'d_n','')">招生考试</a></h2>
+							<!-- run:$products = phpok("xueshengjiuye") -->
+							<!-- if($products[rslist]) -->	
                             <div class="l_box" id="hot_cont1">
+                            	<!-- $products[rslist] AS $key=>$value -->
+								<!-- if($key<1)  -->
                             	<div class="m_pic">
-                                    <a href='show.aspx?id=101' target='_blank' title='国家促进普通高校毕业生就业政策公告'><img src='images/xsjy.jpg' /></a><p class='tit'><a href='show.aspx?id=101' target='_blank' title='国家促进普通高校毕业生就业政策公告'>国家促进普通高校毕业生就业政策公告</a></p><p class='cont'>　　一、鼓励高校毕业生到城乡基层、中西部等地区就业1.参加“选聘高校毕业生到村任职”、“三支一扶”、“大学生志愿服务西…</p>
+                                     <a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>
+									  <!-- if($value[id]) -->
+									<!-- run:$rs = phpok("list","id=".$value[id]) -->
+									<!-- if($rs[newpic]) -->
+									<!-- $rs[newpic] AS $key2=>$value2 -->
+								   <img src='{:$value2[gd][big]}' />
+								     <!-- end -->	
+									<!-- end -->	
+									<!-- end -->
+									 </a>
+									 <p class='tit'><a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>{:$value[title]}</a></p><p class='cont'>{:$value[note]}</p>
                                 </div>
-                                <!---end m_pic-->
+								<!-- end -->
+							    <!-- end -->
+                                
                                 <ul class="txtul">
-                                    <li><a href='show.aspx?id=5683' title="高校对未就业毕业生还需“送一程”">高校对未就业毕业生还需“送一程”</a></li><li><a href='show.aspx?id=5682' title="大连高校毕业生未满5年市内购房将享补助">大连高校毕业生未满5年市内购房将享补助</a></li><li><a href='show.aspx?id=5647' title="又到一年毕业季 应届毕业生应如何理财？">又到一年毕业季 应届毕业生应如何理财？</a></li><li><a href='show.aspx?id=5646' title="广西：建档立卡贫困户家庭高校毕业生全部就业">广西：建档立卡贫困户家庭高校毕业生全部就业</a></li><li><a href='show.aspx?id=5553' title="大学生需树立务实就业观">大学生需树立务实就业观</a></li>
+                                     <!-- $products[rslist] AS $key=>$value -->
+									<!-- if($key>0 && $key<6)  -->
+                                    <li><a href='{:msg_url($value)}' title="{:$value[title]}">{:$value[title]}</a></li>									
+									<!-- end -->
+									<!-- end -->
                                 </ul>
                             </div>
-                            <!--end l_box-->
+							<!-- end -->
+							<!-- run:unset($products) -->
+                          
+							<!-- run:$products = phpok("zhaoshengkaoshi") -->
+							<!-- if($products[rslist]) -->	
                             <div class="l_box" id="hot_cont2" style="display:none;">
+                            	<!-- $products[rslist] AS $key=>$value -->
+								<!-- if($key<1)  -->
                             	<div class="m_pic">
-                                    <a href='show.aspx?id=1168' target='_blank' title='教育部公布2014年高考网上咨询周时间安排'><img src='images/zsgs.jpg' /></a><p class='tit'><a href='show.aspx?id=1168' target='_blank' title='教育部公布2014年高考网上咨询周时间安排'>教育部公布2014年高考网上咨询周时间安排</a></p><p class='cont'>　　教育部“2014年全国普通高校招生网上咨询周”活动将于5月8日在“阳光高考”信息平台上正式启动。根据全国各省市考生填报…</p>
+                                     <a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>
+									  <!-- if($value[id]) -->
+									<!-- run:$rs = phpok("list","id=".$value[id]) -->
+									<!-- if($rs[newpic]) -->
+									<!-- $rs[newpic] AS $key2=>$value2 -->
+								   <img src='{:$value2[gd][big]}' />
+								     <!-- end -->	
+									<!-- end -->	
+									<!-- end -->
+									 </a>
+									 <p class='tit'><a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>{:$value[title]}</a></p><p class='cont'>{:$value[note]}</p>
                                 </div>
-                                <!---end m_pic-->
+								<!-- end -->
+							    <!-- end -->
+                                
                                 <ul class="txtul">
-                                    <li><a href='show.aspx?id=5681' title="教育部：进一步加强高校自主招生信息公开和监督管理工作">教育部：进一步加强高校自主招生信息公开和监督管理工作</a></li><li><a href='show.aspx?id=5680' title="我省2016年普通高招现场咨询活动圆满结束">我省2016年普通高招现场咨询活动圆满结束</a></li><li><a href='show.aspx?id=2311' title="教育部关于印发《2015年全国硕士研究生招生工作管理规定》的通知">教育部关于印发《2015年全国硕士研究生招生工作管理规定》的通知</a></li><li><a href='show.aspx?id=2310' title="2015年全国硕士研究生招生考试公告">2015年全国硕士研究生招生考试公告</a></li><li><a href='show.aspx?id=1168' title="教育部公布2014年高考网上咨询周时间安排">教育部公布2014年高考网上咨询周时间安排</a></li>
+                                     <!-- $products[rslist] AS $key=>$value -->
+									<!-- if($key>0 && $key<6)  -->
+                                    <li><a href='{:msg_url($value)}' title="{:$value[title]}">{:$value[title]}</a></li>									
+									<!-- end -->
+									<!-- end -->
                                 </ul>
                             </div>
-                            <!--end l_box-->
+                            <!-- end -->
+							<!-- run:unset($products) -->
                         </div>
                         <!--end m_lft-->
 </div>
