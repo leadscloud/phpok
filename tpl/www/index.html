@@ -160,7 +160,7 @@
 							   <!-- end -->
                                 <ul class="txtul">
 									<!-- $products[rslist] AS $key=>$value -->
-									<!-- if($key>0)  -->
+									<!-- if($key>0 && $key<6)  -->
                                     <li><a href='{:msg_url($value)}' title="{:$value[title]}">{:$value[title]}</a></li>									
 									<!-- end -->
 									<!-- end -->
@@ -169,16 +169,38 @@
 							<!-- end -->
 							<!-- run:unset($products) -->
                            
+						   
+						   <!-- run:$products = phpok("tongzhigonggao") -->
+							<!-- if($products[rslist]) -->
                             <div class="l_box" id="hotnew_cont2" style="display:none;">
+								<!-- $products[rslist] AS $key=>$value -->
+								<!-- if($key<1)  -->
                             	<div class="m_pic">
-                                   <a href='show.aspx?id=55' target='_blank' title='教育部办公厅关于开展语言文字规范标准培训工作的通知'><img src='images/tzgg.jpg' /></a><p class='tit'><a href='show.aspx?id=55' target='_blank' title='教育部办公厅关于开展语言文字规范标准培训工作的通知'>教育部办公厅关于开展语言文字规范标准培训工作的通知</a></p><p class='cont'>　　语言文字规范化标准化工作是语言文字工作的基础，语言文字规范标准是语言文字方针政策的集中体现，即将发布的《国家中长…</p>
+                                   <a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>
+								   <!-- if($value[id]) -->
+									<!-- run:$rs = phpok("list","id=".$value[id]) -->
+									<!-- if($rs[newpic]) -->
+									<!-- $rs[newpic] AS $key2=>$value2 -->
+								   <img src='{:$value2[gd][big]}' />
+								     <!-- end -->	
+									<!-- end -->	
+									<!-- end -->
+								   </a>
+								   <p class='tit'><a href='{:msg_url($value)}' target='_blank' title='{:$value[title]}'>{:$value[title]}</a></p><p class='cont'>{:$value[note]}</p>
                                 </div>
+							    <!-- end -->
+							    <!-- end -->
                                 
                                 <ul class="txtul">
-                                   <li><a href='show.aspx?id=5611' title="教育部关于印发《教育信息化“十三五”规划》的通知">教育部关于印发《教育信息化“十三五”规划》的通知</a></li><li><a href='show.aspx?id=5610' title="国务院食品安全办等6部门关于进一步加强学校校园及周边食品安全工作的意见">国务院食品安全办等6部门关于进一步加强学校校园及周边食品安全工作的意见</a></li><li><a href='show.aspx?id=5551' title="教育部关于切实做好中小学节粮教育和管理工作的通知">教育部关于切实做好中小学节粮教育和管理工作的通知</a></li><li><a href='show.aspx?id=5550' title="教育部办公厅关于报送加强和改进高校思想政治建设有关经验材料的通知">教育部办公厅关于报送加强和改进高校思想政治建设有关经验材料的通知</a></li><li><a href='show.aspx?id=5506' title="教育部办公厅关于进一步做好高校毕业生就业创业工作的通知">教育部办公厅关于进一步做好高校毕业生就业创业工作的通知</a></li>
-                                </ul>
+									<!-- $products[rslist] AS $key=>$value -->
+									<!-- if($key>0 && $key<6)  -->
+                                   <li><a href='{:msg_url($value)}' title="{:$value[title]}">{:$value[title]}</a></li>								   
+									<!-- end -->
+									<!-- end -->
+							   </ul>
                             </div>
-                            <!--end l_box-->
+                            <!-- end -->
+							<!-- run:unset($products) -->
                         </div>
                         <!--end m_lft-->
                         <div class="m_lft guangli">
