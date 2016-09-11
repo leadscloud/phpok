@@ -344,7 +344,7 @@ if (self.location != top.location) top.location = self.location;
 			success: function(msg){
 				if(msg.status){
                     phpok_update_code();
-					alert('输入错误，请重新输入!');
+					alert('验证码错误或已过时，请重新输入!');
 					return false;
 				}else{
 					$("#codeForm").submit();
