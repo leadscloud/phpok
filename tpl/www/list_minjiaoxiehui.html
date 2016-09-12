@@ -2,7 +2,29 @@
 
 <div class="main">
 <div class="left">
-<div class="weizhi"><span>民教协会</span>您的位置：<a href="default.aspx">首页</a> >> 民教协会</div>
+<div class="weizhi"><span>
+<!-- if($leader && is_array($leader)) --> 
+<!-- $leader AS $key=>$value --> 
+	<!-- if($value[url]) --> 
+	
+	{:$value[title]}
+
+	<!-- end --> 
+<!-- end --> 
+<!-- end --> 	
+</span>您的位置：<a href="index.php">首页</a> 
+
+<!-- if($leader && is_array($leader)) --> 
+<!-- $leader AS $key=>$value --> 
+	<!-- if($value[url]) --> 
+	>>  <a href="{:$value[url]}">{:$value[title]}</a> 
+	<!-- else --> 
+	>>  {:$value[title]} 	
+	<!-- end --> 
+<!-- end --> 
+<!-- end --> 
+
+</div>
 <div class="news_list">
 <!--
 <div class="tw">
