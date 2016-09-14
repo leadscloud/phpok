@@ -174,7 +174,10 @@ if (self.location != top.location) top.location = self.location;
 <td align="right">身份证号：</td>
 <td><input name="txtCardId2" type="text" id="txtCardId2" class="input w80" /></td>
 <td align="right">验证码：</td>
-<td><input name="txtCode2" type="text" id="txtCode2" class="input w50" /><a id="verifyCode" style="" href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;"><img src="tools/verify_code.ashx" width="80" height="22" align="absmiddle" /></a></td>
+<td>
+    <input name="txtCode2" type="text" id="txtCode2" class="input w50" />
+	<span id="phpok_update_code2"><img src="{:site_url('login,codes')}" border="0" align="absmiddle" style="cursor:pointer;"></span>
+</td>
 <td>
 </tr>
 <tr>
@@ -285,7 +288,6 @@ if (self.location != top.location) top.location = self.location;
 </div>
 </div>
 <script>
-
 	$('#btnSubmit').click(function(){
 		var flag = phpok_chklogin();
 		if(!flag){
@@ -297,7 +299,6 @@ if (self.location != top.location) top.location = self.location;
 			alert("验证码不允许为空！");
 			return false;
 		}
-        console.log(code);
 		
 		var url = 'index.php?c=search&f=code';
 		$.ajax({
@@ -306,7 +307,6 @@ if (self.location != top.location) top.location = self.location;
 			dataType : 'json',
 			data : {code:code},
 			success: function(msg){
-                console.log(msg);
 				if(msg.status){
 					alert('输入错误或验证码已过时，请重新输入!');
                     phpok_update_code();
@@ -317,5 +317,9 @@ if (self.location != top.location) top.location = self.location;
 			}
 		});
 	});
+
+    $(document).ready(function(){  
+        setTimeout("phpok_update_code()", 50); 
+    });  
 </script>
 <!-- inc:foot -->

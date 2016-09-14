@@ -142,5 +142,59 @@ function to_submit()
 	}
 	getid("_phpok_submit").disabled = true;
 }
+
+<!--自动生成pass-->
+$('#pass').focusout(function(){
+    var pass = $.trim($('#pass').val());
+    if (pass == '' || pass == undefined) {
+        $('#pass').val('aaaaaa');
+    }
+});
+
+<!--自动生成email-->
+$('#email').focusout(function(){
+    var email = $.trim($('#email').val());
+    if (email == '' || email == undefined) {
+        email = Date.parse(new Date()) + '@gg.com';
+        $('#email').val(email);
+    }
+});
+
+<!--根据身份证号自动生成出生年月-->
+$('#idcard').focusout(function(){
+    var idcard = $.trim($('#idcard').val());
+    if (idcard.length < 18) {
+        alert('身份证长度小于18位，请检查!');
+    }
+    var year = idcard.substring(6, 10);
+    var month = idcard.substring(10, 12);
+    var day = idcard.substring(12, 14);
+    var birthday = year+'年'+month+'月'+day+'日';
+    $('#birthday').val(birthday);
+});
+
+<!--根据标识自动生成证书编号-->
+$('#certnum').focusout(function(){
+    var certnum = $.trim($('#certnum').val());
+    var graduString = $.trim($('#end').val());
+    if (certnum == '' || certnum == undefined) {
+        var gradu = getNum(graduString);
+        var graduHead = '37' + newNumber(1000, 9999);
+        var graduEnd = newNumber(1000, 9999);
+        certnum = graduHead + gradu + graduEnd;
+        $('#certnum').val(certnum);
+    }
+});
+
+<!--提取毕业时间-->
+function getNum(text){
+    var value = text.replace(/[^0-9]/ig, ""); 
+    return value;
+}
+
+<!--生成在[start,end]范围内的随机数值，只支持不小于0的合法范围  -->
+function newNumber(start, end){  
+    return Math.round(Math.random()*(end-start)+start);
+} 
 </script>
 <!-- inc:footer -->
