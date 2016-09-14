@@ -7,36 +7,16 @@
 <div class="snav">
 <div class="tongzhi"><div id="scrollDiv">
      <ul style="margin-top: 0px;">
+	 
+         <!-- run:$products = phpok("tongzhigonggao") -->
+<!-- if($products[rslist]) -->
+  <!-- $products[rslist] AS $key=>$value -->
+  
+     <p><a href='{:msg_url($value)}' title="{:$value[title]}" target="_blank">{:$value[title]}</a></p>
      
-     <p><a href="show.aspx?id=5611" target="_blank">教育部关于印发《教育信息化“十三五”规划》的通知…</a></p>
-     
-     <p><a href="show.aspx?id=5610" target="_blank">国务院食品安全办等6部门关于进一步加强学校校园及…</a></p>
-     
-     <p><a href="show.aspx?id=5551" target="_blank">教育部关于切实做好中小学节粮教育和管理工作的通知…</a></p>
-     
-     <p><a href="show.aspx?id=5550" target="_blank">教育部办公厅关于报送加强和改进高校思想政治建设有…</a></p>
-     
-     <p><a href="show.aspx?id=5506" target="_blank">教育部办公厅关于进一步做好高校毕业生就业创业工作…</a></p>
-     
-     <p><a href="show.aspx?id=5505" target="_blank">中共教育部党组中央纪委驻教育部纪检组关于高等学校…</a></p>
-     
-     <p><a href="show.aspx?id=5443" target="_blank">教育部等七部门关于印发《职业学校教师企业实践规定…</a></p>
-     
-     <p><a href="show.aspx?id=5442" target="_blank">中共教育部党组中央纪委驻教育部纪检组关于高等学校…</a></p>
-     
-     <p><a href="show.aspx?id=5359" target="_blank">教育部关于印发《全国职业院校技能大赛阳光廉洁办赛…</a></p>
-     
-     <p><a href="show.aspx?id=5358" target="_blank">关于印发全国足球场地设施建设规划（2016—2020年）…</a></p>
-     
-     <p><a href="show.aspx?id=5294" target="_blank">中共教育部党组关于深入学习贯彻习近平总书记有关教…</a></p>
-     
-     <p><a href="show.aspx?id=5293" target="_blank">教育部办公厅关于印发《教育信息化项目管理暂行办法…</a></p>
-     
-     <p><a href="show.aspx?id=5210" target="_blank">教育部关于印发《教育部经济责任审计规定》的通知</a></p>
-     
-     <p><a href="show.aspx?id=5209" target="_blank">教育部关于印发《教育部经济责任审计规定》的通知</a></p>
-     
-     <p><a href="show.aspx?id=5140" target="_blank">教育部办公厅关于落实国务院决定取消中央指定地方实…</a></p>
+       <!-- end -->	
+<!-- end -->
+<!-- run:unset($products) -->
      
      </ul>
      </div></div>
@@ -129,19 +109,21 @@
 <div class="zhengce" style="margin-top:0px;">
 <div class="zhengceitem"><strong>教育领导</strong></div>
 <div class="zhengcelist" style="line-height:25px; font-size:16px; font-weight:bold; color:#A1D6F3; padding-bottom:10px;">
-<ul class="lingdao guangli">
+<ul class="lingdao">
 
-<li>
-<a href="show.aspx?id=6"><img src="images/jyld1.jpg"></a>
-<p class="name">刘延东同志简历</p>
+<!-- run:$products = phpok("jiaoyulingdao") -->
+<!-- if($products[rslist]) -->
+  <!-- $products[rslist] AS $key=>$value -->
+  <!-- if($key<2) -->
+<li class="">
+<a href="{:msg_url($value)}"><img src="{:$value[picture]}" /></a>
+<p class="name">{:$value[title]}</p>
 <p class="zhiwu">中共中央政治局委员，副总理。</p>
 </li>
-
-<li>
-<a href="show.aspx?id=56"><img src="images/jyld3.jpg"></a>
-<p class="name">袁贵仁同志简历</p>
-<p class="zhiwu">教育部部长、党组书记。</p>
-</li>
+  <!-- end -->	
+  <!-- end -->	
+<!-- end -->
+<!-- run:unset($products) -->
 
 </ul>
 </div>
@@ -150,9 +132,19 @@
 
 <div class="zhengce" style="margin-top:5px;">
 <div class="zhengceitem"><strong>热点排行榜</strong></div>
-<div class="zhengcelist guangli">
+<div class="zhengcelist">
 <ul class="h_ul hs">
- <li><a href='show.aspx?id=379' title="促大学生就业 财政多方“铺路”" target='_blank'>促大学生就业 财政多方“铺路”</a></li><li><a href='show.aspx?id=378' title="2014年就业月历 机会不容错过" target='_blank'>2014年就业月历 机会不容错过</a></li><li><a href='show.aspx?id=452' title="西安思源学院2014年“赏花•踏春•校园开放月”即将举行" target='_blank'>西安思源学院2014年“赏花•踏春•校园开放月”即将举行</a></li><li><a href='show.aspx?id=100' title="人力资源和社会保障部：落实民族地区积极就业政策" target='_blank'>人力资源和社会保障部：落实民族地区积极就业政策</a></li><li><a href='show.aspx?id=469' title="正视“择业难”背后的社会心态" target='_blank'>正视“择业难”背后的社会心态</a></li><li><a href='show.aspx?id=399' title="教育部教育装备专家指导委员会成立" target='_blank'>教育部教育装备专家指导委员会成立</a></li><li><a href='show.aspx?id=6' title="刘延东同志简历" target='_blank'>刘延东同志简历</a></li><li><a href='show.aspx?id=370' title="围绕立德树人培育和弘扬社会主义核心价值观" target='_blank'>围绕立德树人培育和弘扬社会主义核心价值观</a></li>
+
+<!-- run:$products = phpok("hotpaihang") -->
+<!-- if($products[rslist]) -->
+  <!-- $products[rslist] AS $key=>$value -->
+  <!-- if($key<8) -->
+ <li><a href='{:msg_url($value)}' title="{:$value[title]}" target='_blank'>{:$value[title]}</a></li>
+ <!-- end -->	
+  <!-- end -->	
+<!-- end -->
+<!-- run:unset($products) -->
+ 
 </ul>
 </div>
 </div>
@@ -172,12 +164,12 @@
 </div>
 </div>
     
-<div class="zhengce" style="margin-top:5px; display:none" id="qq">
-<div class="zhengceitem"><strong>全国免费客服</strong></div>
-<div class="zhengcelist" style="line-height:25px; font-size:16px; font-weight:bold; color:#A1D6F3; padding-bottom:10px;">
-010-52725863 (信息中心)  <br />   010-52725865 (审核中心）   <br /><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes"><img border="0"  align="absmiddle" src="http://wpa.qq.com/pa?p=2::51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
-</div>
-</div>
+<!--<div class="zhengce" style="margin-top:5px; display:none" id="qq">-->
+    <!--<div class="zhengceitem"><strong>全国免费客服</strong></div>-->
+    <!--<div class="zhengcelist" style="line-height:25px; font-size:16px; font-weight:bold; color:#A1D6F3; padding-bottom:10px;">-->
+        <!--010-52725863 (信息中心)  <br />   010-52725865 (审核中心）   <br /><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes"><img border="0"  align="absmiddle" src="http://wpa.qq.com/pa?p=2::51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>-->
+    <!--</div>-->
+<!--</div>-->
 
 </div>
 </div>

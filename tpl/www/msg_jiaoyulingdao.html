@@ -1,7 +1,30 @@
 <!-- inc:head_jiaoyulingdao -->
 <div class="main">
 <div class="left">
-<div class="weizhi"><span>教育领导</span>您的位置：<a href="default.aspx">首页</a> >> <a href='list.aspx?id=34'>教育领导</a> >> 文章详情</div>
+<div class="weizhi">
+<span>
+<!-- if($leader && is_array($leader)) --> 
+<!-- $leader AS $key=>$value --> 
+	<!-- if($value[url]) --> 
+	
+	{:$value[title]}
+
+	<!-- end --> 
+<!-- end --> 
+<!-- end --> 	
+</span>您的位置：<a href="index.php">首页</a> 
+
+<!-- if($leader && is_array($leader)) --> 
+<!-- $leader AS $key=>$value --> 
+	<!-- if($value[url]) --> 
+	>>  <a href="{:$value[url]}">{:$value[title]}</a> 
+	<!-- else --> 
+	>>  {:$value[title]} 	
+	<!-- end --> 
+<!-- end --> 
+<!-- end --> 
+
+</div>
 <div class="listcontent">
 <h1>{:$rs[title]}</h1>
 <div class="info">来源：新闻中心　编辑：通讯员　时间：{:date("Y-m-d H:i:s",$rs[post_date])}　点击数：{:$rs[hits]}</div>
@@ -29,25 +52,16 @@
                     <h3>相关文章：</h3>
                     <ul>
                         
-                        <li><a href="show.aspx?id=5580">让每个孩子都有机会实现梦想</a></li>
-                        
-                        <li><a href="show.aspx?id=5338">中俄精心筹备人文合作委员会第十七次会议</a></li>
-                        
-                        <li><a href="show.aspx?id=4561">教育部关工委传达学习总书记重要指示精神</a></li>
-                        
-                        <li><a href="show.aspx?id=3923">深化中美教育交流与合作为构建中美新型大国关系作出新贡献</a></li>
-                        
-                        <li><a href="show.aspx?id=2984">教育部办公厅关于做好全国青少年校园足球特色学校及试点县（区）遴选工作的通知</a></li>
-                        
-                        <li><a href="show.aspx?id=2695">中国联合国教科文组织全国委员会第29次全体会议召开</a></li>
-                        
-                        <li><a href="show.aspx?id=2306">教育部　国家语委关于印发刘延东副总理在世界语言大会开幕式上的讲话的通知</a></li>
-                        
-                        <li><a href="show.aspx?id=2001">推进深化考试招生制度改革工作视频会召开</a></li>
-                        
-                        <li><a href="show.aspx?id=1426">人社部就贯彻落实全国职业教育工作会议精神答问</a></li>
-                        
-                        <li><a href="show.aspx?id=1281">教育部副部长鲁昕：职业教育发展抓好八项工作</a></li>
+						<!-- run:$products = phpok("xiangguannews") -->
+						<!-- if($products[rslist]) -->
+						  <!-- $products[rslist] AS $key=>$value -->
+						  <!-- if($key<10) -->
+                        <li><a href='{:msg_url($value)}' title="{:$value[title]}">{:$value[title]}</a></li>
+						  <!-- end -->	
+						  <!-- end -->	
+						<!-- end -->
+						<!-- run:unset($products) -->		
+                      
                         
                     </ul>
 </div>
